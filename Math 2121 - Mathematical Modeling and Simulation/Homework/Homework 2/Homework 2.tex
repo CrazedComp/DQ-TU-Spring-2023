@@ -1,0 +1,125 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{reflection}[2][Reflection]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{proposition}[2][Proposition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+%\renewcommand{\qedsymbol}{\filledbox}
+ 
+\title{Homework 1-24-23}%replace X with the appropriate number
+\author{Dean Quach\\ %replace with your name
+MATH 2121 - Mathematical Modeling and Simulation} %if necessary, replace with your course title
+\date{Janurary 24, 2023}
+\maketitle
+
+\hrule
+\vspace{20pt}
+
+
+
+\begin{exercise}{Analysis of (a)}
+\end{exercise}
+
+It seems that each Monte Carlo simulation is quite different. Roughly half of the time, it is bimodal, i.e. two main spikes, and the 
+other half of the time it is uniform or unimodal. In all cases, they do not follow any particular distribution, 
+for example the bimodal runs, some seem symmetric, and some seem to have a long tail end. Similarly the unimodal. 
+Also for the uniform, it generally is more "spikey" with a common max amount of runs ending with a position.
+
+All cases are also not centered around 0. Most are below 0 with a lower bound of near $-1500$ to $-1600$, which 
+implies the symmetry that occurs that I described before mostly happens around $-800$ (if it does happen). 
+This is due to the middle agent which in general keeps the lower agent from walking past 5. Also if the middle one goes up, it may 
+not go up as much since it is in the middle and has an upper walker which keeps it frrom increasing the range of the bottom walker 
+(in the positive/up direction). So there is "more inscentive" for the bottom walker to keep decreasing. Also if the middle walker goes 
+down/negative, then the bottom walker must decrease as well.
+
+Also quick note, since the middle walker affects the lower walker, some times the range can be 
+$-100$ to $400$. Which in this case, implies that the middle walker stayed in the middle (and didn't, on average, choose to 
+increase/decrease too much).
+
+Code source: temple\_abm\_random\_walk\_2d\_mod\\
+from class.
+
+\begin{exercise}{Analysis of (b)}
+\end{exercise}
+I do not know if this is meant to happen, but when looking at a single walk (sample), since the middle walker starts at the midpoint 
+between the top and bottom walker, then the next step has a $50\%$ chance to go up or down. But it always goes the same 
+direction and stays in the middle. I don't know if this is because its basing off of the initial condition or...
+
+As for the histogram, I don;t know what I did wrong, but I get a uniform distribution. This is because of my poor code from the 
+previous block. Every walk ends in a specific final position, and the number is usually 100 for each. But the final position generally 
+ranges from $0\to 2$, $-2\to 0$, or $0\to 16$. 
+
+
+\begin{exercise}{Analysis of (c)}
+\end{exercise}
+
+I am stuck on update rule and why it isn't working.
+
+
+
+
+
+%\begin{theorem}{2.15} %You can use theorem, exercise, problem, or question here.  Modify x.yz to be whatever number you are proving
+%An odd integer times an odd integer results in an odd integer.
+%\end{theorem}
+% 
+%\begin{proof} %You can also use solution in place of proof.
+%Assume m and n are both odd integers.\\
+%Let m = 2k+1, and n = 2j+1\\
+%So mn = 4kj+2k+2j+1\\
+%Which factors into 2(2kj+k+j)+1.\\
+%
+%
+%%Note 1: The * tells LaTeX not to number the lines.  If you remove the *, be sure to remove it below, too.
+%%Note 2: Inside the align environment, you do not want to use $-signs.  The reason for this is that this is already a math environment. This is why we have to include \text{} around any text inside the align environment.
+%By definition 2.9 (2kj+k+j) is an integer.\\
+%so by definition 2.10 mn is an odd integer.\\\\
+%\end{proof}
+%
+%\begin{theorem}{2.12} %You can use theorem, exercise, problem, or question here.  Modify x.yz to be whatever number you are proving
+%The product of an odd integer and an even integer is odd.\\\\
+%\end{theorem}
+%\begin{proof} %You can also use solution in place of proof.
+%The product of 2 times 3 is 6, which is an even number.
+%
+%
+%\end{proof}
+
+
+
+
+
+
+
+
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+ 
+\end{document}

@@ -1,0 +1,566 @@
+\documentclass[12pt]{book}
+\usepackage[width=4.375in, height=7.0in, top=1.0in, papersize={5.5in,8.5in}]{geometry}
+\usepackage[pdftex]{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tipa}
+%\usepackage{txfonts}
+\usepackage{textcomp}
+%\usepackage{array}
+%\usepackage{xy}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\fancyhf{}
+\fancyhead[LE,RO]{\bfseries\thepage}
+\fancyhead[LO]{\bfseries\rightmark}
+\fancyhead[RE]{\bfseries\leftmark}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\headheight}{0.5pt}
+\setlength{\footskip}{0in}
+\renewcommand{\footruleskip}{0pt}
+\fancypagestyle{plain}{%
+\fancyhead{}
+\renewcommand{\headrulewidth}{0pt}
+}
+%
+%\parindent 0in
+\parskip 0.05in
+
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta
+	urlcolor=cyan
+	urlstyle{same}
+	}
+%\href{www.aaa.com}{This Link}
+
+
+\usepackage{amsthm}
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{example}[2][Example]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{Recall}[2][Recall]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{remark}[2][Remark]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{proposition}[2][Proposition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{definition}[2][Definition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\newtheorem*{theorem*}{Theorem}
+\newtheorem*{corollary*}{Corollary}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem*{definition*}{Definition}
+\newtheorem*{remark*}{Remark}
+\newtheorem*{example*}{Example}
+
+
+\usepackage{fancyvrb} 
+%\begin{Verbatim}[numbers=left, frame=single, formatcom=\color{red}]
+
+\begin{document}
+\frontmatter
+%
+\chapter*{\Huge \center Mathematical Modeling and Simulation Notes}
+\thispagestyle{empty}
+%{\hspace{0.25in} \includegraphics{./ru_sun.jpg} }
+\section*{\huge \center Dean Quach}
+
+
+
+\newpage
+\section*{\center \normalsize Course Info}
+\subsection*{\center \normalsize Mathematical Modeling and Simulation}
+
+\begin{center}
+Janurary 17, 2023 to May 9, 2023\\
+TR --- 10:00 am - 12:20 pm --- Wachman 10\\
+Prof. Mrs. Rujeko Chinomona\\
+CRN 48064
+
+3 credits $\implies{}$ 6 hours of homework
+\end{center}
+
+\subsection*{\center \normalsize Text}
+\begin{center}
+No course textbook, however all readings are on the \href{https://templeu.instructure.com/courses/124350}{Canvas page} under \href{https://templeu.instructure.com/courses/124350/pages/topic-schedule}{"Topic Schedule"}.
+\end{center}
+
+
+\newpage
+\section*{\center \normalsize Other Notes}
+\begin{center}
+Homework due $\approx$ weekly on friday, through Github. Generally, MATLAB excercises.
+
+No exams, but eventually, everyother week there will be a check-in for the project.
+
+Final project presentation 1 week before end of semester. 
+
+Project files/report due 1 week after semester ends.\\
+\end{center}
+\vspace{50pt}
+\begin{center}
+Office Hours: Wachman 512
+
+TR 1:30-3:30pm
+\end{center}
+
+
+%
+\chapter*{\center \normalsize Spring 2023\\
+Math 2121\\
+Section 001\\}
+%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%
+\tableofcontents
+%
+\mainmatter
+%
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Git/Github and Intro to Agent Based Modeling}
+For the Git/Github Setup, its simple enough, go download:
+\begin{enumerate} 
+	\item Make an account \href{https://github.com/}{here}
+	\item \href{https://notepad-plus-plus.org/downloads/}{Notepad++}
+	\item \href{https://git-scm.com/downloads}{Git}
+	\item \href{https://desktop.github.com/}{Github Desktop}
+\end{enumerate}
+in that order. The main part being ``Notepad++" before ``Git". This is so that when you configure the installation of ``Git", you can choose ``Notepad++" as the default terminal, instead of ``Vim" editor (I believe). Also we will be using MATLAB in this course.
+
+\newpage 
+\section{Types of Statistics}
+\begin{itemize}
+	\item Deterministic
+	\item Stochastic
+	\begin{itemize}
+		\item which is Randomness
+	\end{itemize}
+\end{itemize}
+both of which you will see in various models.
+
+\vspace{50pt}
+The focus of this class will be
+\section{Agent Based Modeling (or ABM)}
+Specifically, Complex adaptive systems
+
+We'll look at individual agents, which have
+\begin{itemize}
+	\item Emergent behavior
+	\item macro scale behavior $>$ micro scale behavior\\
+\end{itemize}
+
+
+\begin{definition*}
+Computational study of processes modeled as\\ dynamic systems of interacting agents
+\end{definition*}
+-   Key idea: identifying individuals/agents
+
+
+\newpage
+\noindent Things to look for can include
+\begin{itemize}
+	\item Agents: organisms, humans, businesses, institutions
+	\item Unique: different size location, resource reserves, history, etc.
+	\item Interacting locally: agents usually interact with neighbors and not all agents in geographic space or network.
+	\item Autonomous:
+	\item Adaptive:
+\end{itemize}
+
+\noindent Key things to find (what are ABMs composed of)
+\begin{itemize} 
+	\item Number of agents
+	\item Set of decision making for each agentSet of learning rules for each agent
+	\item A space in which the agents can move/operate and an environment in which they can interact
+	\begin{itemize} 
+		\item(It's kind of like game design)
+	\end{itemize}
+\end{itemize}
+
+
+
+\section{ABM Simulation}
+\begin{enumerate}
+	\item Setup environment and agents
+	\item Run for each time step
+	\item (Do Something)
+\end{enumerate}
+
+\noindent \textbf{E.g.}
+\begin{itemize}
+	\item Agents: people at temple
+	\item Characteristic: 
+
+	\begin{itemize}
+		\item masks or not
+		\item age/height/weight/etc.
+	\end{itemize}
+	\item Rules: (what to keep track of)
+
+	\begin{itemize}
+		\item Simplify to within one room
+		\item Track mask or not
+	\end{itemize}
+
+	\item Movement (gas model for example)
+	\item Probability of collisions, getting infected, etc.
+	\begin{itemize}
+		\item Think stochastic video games, \\movie simulation/cgi/large wars and ragdolls
+	\end{itemize}
+\end{itemize}
+
+
+
+\section{ABM Properties and Methodology}
+\noindent The general properties of an ABM deals with
+\begin{enumerate}
+	\item Individuals/Agents
+	\item Act according to self interest
+	\item Can interact with each other
+	\item Can interact with the environment
+\end{enumerate}
+
+We'll look at economics, social studies, biology, etc. as a broad overview.\\
+
+\newpage
+\noindent For example, for Epidemiology
+\begin{itemize}
+\item Disease modeling (and spreading through out a population
+	\item e.g. Covid-19, HIV, SARS, Flu, Measles, Chickenpox
+\end{itemize}
+
+\noindent So for modeling, what would you need to consider? \\(2 main ways)
+
+
+
+\subsection{Way 1: For an ABM}
+Represent individuals in population (which may be humans, different animals... or be spiecific to human like old/young/ healthy/etc.)
+Simulate what happens when individuals meet.\\
+
+
+\noindent \textbf{E.g. - Characteristics of disease}
+\begin{itemize}
+	\item How does the disease spread? 
+		\begin{itemize}
+		\item High/Low Probability of infecting individuals (old/young or healthy/unhealthy)
+		\end{itemize}
+	\item Time
+		\begin{itemize}
+		\item recovery speed
+		\item period of infection
+		\item period of exposure before you get infected
+		\end{itemize}
+\end{itemize}
+
+
+
+\noindent Attributes of agents
+\begin{itemize}
+\item Age
+\item Gender
+\item Immunocomprimised?
+\item Location
+	\begin{itemize}
+	\item Related: Healthy vs. Unhealthy
+	\end{itemize}
+\end{itemize}
+
+\noindent Now that we have recognized/observed these properties, we need to
+\begin{itemize}
+\item Define an environment
+\item Define a set of rules, by which agents move/interact. The interaction can be 
+	\begin{itemize}
+	\item agent - agent
+	\item agent - environment
+	\end{itemize}
+\item Create Code
+\item Run Simulation
+	\begin{itemize}
+	\item Discrete steps (a.k.a. time steps)
+	\end{itemize}
+\item Analyze Results
+\end{itemize}
+
+
+
+\noindent Side note: ABM's can get large too quickly with \\
+$O(f(x)) \rightarrow \infty$. So before you start your modeling task, you need to identify the key questions your model needs to answer.
+
+
+
+\subsection{Way 2: Quickly (we won't talk about this for now)}
+\noindent This method by groups "loses resolution",
+\begin{itemize}
+\item Group your population (e.g. SIR model)
+	\begin{itemize}
+	\item Suseptible $=s$
+	\item Infected $=i$
+	\item recovered $=r$
+	\end{itemize}
+\end{itemize}
+
+And this leads to a differential equation model, for an SIR model with variables...
+you'll analyize/model with 
+$$\frac{\partial S}{\partial t},~\frac{\partial i}{\partial t},~\text{and}~\frac{\partial r}{\partial t}.$$
+
+
+
+\section{About Github}
+
+Clone Repository - a.k.a. "download"\\
+Make a MATLAB folder on desktop/USB drive for organizing files. 
+e.g. MATH2121Sp23
+\begin{itemize}
+\item MATH2121
+	\begin{itemize}
+	\item HW1
+	\item HW2
+	\item ...
+	\end{itemize}
+\end{itemize}
+
+Refer to the ``github" cheat sheet and ``gittools" pdf for things you need to know. Namely,
+\begin{itemize}
+\item Clone
+\item Commit
+\item Fetch
+\item Push
+\item Pull
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Elaborating on \\Stochasticity/Randomness}
+\indent Recall we're looking at "Mathematical Modeling"
+and to be honest, the following equation shall be implemented as much to heart as you possibly can.
+
+$$Model = Simplification~of~reality$$
+
+\noindent Part of this includes choosing the correct type of statistical measurement method.
+
+\section{Deterministic vs. Stochastic} 
+Preface: It is not specifically one or the other, there can be a little bit of both in eachother.\\
+
+
+\newpage
+\subsection{``Deterministic"}
+...generally predicts what will happen.
+\begin{itemize}
+\item $F=ma$
+\item Physical laws modeled by differential equations
+\item Initial conditions leads to same output everytime.
+\end{itemize}
+
+\subsection{``Stochasticity"}
+...are generally random events where different results can be obtained from the same initial condition.
+
+--- Why introduce stochasticity in a model?
+
+\noindent Usually because of some human/living being indecisiveness := Natural variability. 
+
+\noindent \textbf{E.g.}
+\begin{itemize}
+\item modeling crowd behavior
+\item model consumer behavior
+\item model behavior on stock market
+\end{itemize}
+
+\noindent Use stochasticity to assign initial conditions,\\
+and you can Model variable outcome processes.\\
+
+\noindent Random numbers in models, where\\
+you pick random \# distribution.
+
+The main point is that Stochasticity/Randomness has
+\begin{itemize} 
+\item Natural Variability
+\item Stochastic Variable to model complex processes
+\item Initialize model
+\item Monte Carlo Simulation (Run it many times)
+	\begin{itemize} 
+	\item Use a histogram to visualize different frequences
+	\end{itemize} 
+\end{itemize} 
+
+
+
+\section{Continuous vs. Discrete \\Distributions}
+\indent For a random variable, which one to use and when?
+
+\noindent \textbf{For continuous distributions}
+\begin{itemize}
+\item normal distribution
+\item uniform distribution
+\item log-normal distribution
+\end{itemize}
+
+
+
+
+
+
+\chapter{Random Walks}
+There are many takes/definitions on what a random walk is.
+\begin{itemize}
+\item Process by which randomly moving objects wander away from their starting points.
+\item Stochastic Process for determining the probable location of a point subject to random motions, givin the probabilities of moving some distance in some direction.
+\end{itemize}
+
+\section{1D Random Walks}
+You can imagine a number line, where 
+\begin{itemize}
+\item you start at 0
+\item you move $\pm 1$ steps (right or left/up and down), where we can set a probability measure
+	\begin{itemize}
+	\item assume we set $P(\pm 1)=.5$
+	\end{itemize}
+\item Per discrete step in time, we do an action. 
+\item One of the main questions: Where would you end up (probability)
+\end{itemize}
+
+
+
+\section{2D Random Walks}
+
+\hspace{\parindent}This would similarly have two dimensions, which implies a whole plane of freedom.
+
+\noindent Random walks can represent: 
+\begin{enumerate}
+\item Path of molecules in a gas/molecules in a \\gas/liquid (Brownian Motion)
+\item Path of an animal looking for food
+\item Short term flucuating Stock
+\item Diffusion 
+\end{enumerate}
+
+\noindent Questions:
+\begin{enumerate}
+\item What is the expected position of the particle after $n$ steps?
+\item How far does the particle travel after $n$ steps?
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+\chapter{Statistical Measurements}
+\begin{definition*}Mean
+$$\bar{x}=\frac{1}{n} \sum\limits_{i=1}^{n} x_{i}=\frac{x_{1}+x_{2}+\cdots+x_{n}}{n}$$
+\end{definition*}
+
+\begin{definition*}Variance\footnote[1]{(Note: Matlab will default to $\frac{1}{n-1}$ (basel's correction) i.e. the entire population)}\\
+\end{definition*}
+\indent If looking at the entire population
+$$var(x)=\frac{1}{n-1} \sum\limits_{i=1}^{n} (x_{i}-\bar{x})^{2}$$
+
+
+If looking at a sample of popultaion
+$$var(x)=\frac{1}{n} \sum\limits_{i=1}^{n} (x_{i}-\bar{x})^{2}$$
+
+
+
+\begin{definition*}Standard Deviation
+$$\sigma = \sqrt{var(x)}=\sqrt{\frac{1}{n-1} \sum\limits_{i=1}^{n} (x_{i}-\bar{x})^{2}}$$
+\end{definition*}
+
+
+
+
+
+
+
+\chapter{Simulated Annealing}
+
+...metallurgy...
+
+\noindent Instead of picking best move, pick a random move. 
+
+Set probability of accempting a bad move, $P$ will go down as you take more steps. \\
+
+\noindent If the temp is
+\begin{itemize}
+\item High $\implies{}$ more likely to accept bad move
+\item Low $\implies{}$ more likely to reject a bad move.
+\end{itemize}
+
+
+\newpage
+\section{Pseudocode}
+
+Let $x=x_{0}$, and $f(x)=f(x_{0})$.
+
+Let $n$ be total $\#$ of steps in random walk.
+
+
+\begin{Verbatim}[numbers=left, frame=single, formatcom=\color{black}]
+for j=1:n
+then, Set temperature
+
+Pick a random move, 
+x_{mean}=x+random variable
+\end{Verbatim}
+
+
+
+
+
+\backmatter
+%
+\begin{thebibliography}{99}
+\end{thebibliography}
+\end{document}
