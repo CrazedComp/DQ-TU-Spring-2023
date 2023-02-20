@@ -1,0 +1,327 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{reflection}[2][Reflection]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{proposition}[2][Proposition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+
+%\renewcommand\qedsymbol{$\blacksquare$} 
+%\renewcommand\qedsymbol{q.e.d.} 
+%\renewcommand\qedsymbol{$\square$} 
+
+
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+%\renewcommand{\qedsymbol}{\filledbox}
+ 
+\title{Homework 5}%replace X with the appropriate number
+\author{Dean Quach\\ %replace with your name
+MATH 3003 - Theory of Numbers} %if necessary, replace with your course title
+\date{Februrary 17, 2023}
+\maketitle
+
+\hrule
+\vspace{20pt}
+
+
+
+
+
+\begin{exercise}{3.4.1} Use the Euclidean algorithm to find each of the following greatest common divisors.\footnote{I'll keep this format for the rest of this document. Where the first part (a) I put the extra empty valued steps, and then the other parts (b) through \{some letter in the alphabet\} I'll just do quickly.}
+\end{exercise}
+
+
+\noindent \textbf{Part (a) 45,75}\\
+$\mathbf{Sol^n:}$
+\begin{align*}
+gcd(45,75)&\implies\\
+&75=45()+\\
+&75=45(1)+30\\
+&45=30()+\\
+&45=30(1)+15\\
+&30=15()+\\
+&30=\boxed{15}(2)+\mathbf{0}\\
+\therefore gcd(45,75)=&15.\qed
+\end{align*}
+
+
+\noindent \textbf{Part (b) 102,222}\\
+$\mathbf{Sol^n:}$
+\begin{align*}
+gcd(102,222)&\implies\\
+222&=102(2)+18\\
+102&=18(5)+12\\
+18&=12(1)+6\\
+12&=\boxed{6}(2)+0\\
+\therefore gcd(102,222)&=6.\qed
+\end{align*}
+
+
+\noindent \textbf{Part (c) 666,1414}\\
+$\mathbf{Sol^n:}$
+\begin{align*}
+gcd(666,114)&\implies\\
+1414&=666(2)+82\\
+666&=82(8)+10\\
+82&=10(8)+2\\
+10&=\boxed{2}(5)+0\\
+\therefore gcd(666,1414)&=2.\qed
+\end{align*}
+
+
+\noindent\textbf{Part (d) 20785,44350}\\
+$\mathbf{Sol^n:}$
+\begin{align*}
+gcd(20785,44350)&\implies\\
+44350&=20785(2)+2780\\
+20785&=2780(7)+1325\\
+2780&=1325(2)+130\\
+1325&=130(10)+25\\
+130&=25(5)+5\\
+25&=\boxed{5}(5)+0\\
+\therefore gcd(20785,44350)&=5.\qed\\
+\end{align*}
+
+
+
+
+
+\begin{exercise}{3.4.3} For each pair of integers in Exercise 1, express the greatest common divisor of the integers as a linear combination of these integers.
+\end{exercise}
+
+
+\noindent \textbf{Part (a) 45,75.} \\
+$\mathbf{Sol^n:}$
+\begin{align*}
+\intertext{We know}
+15&=(1)45+(-1)30
+\intertext{and since $30=75-45$,}
+15&=45-(75-45)=2(45)-75.
+\intertext{$\therefore 15=2(45)-75.\qed$}
+\end{align*}
+
+
+\newpage
+\noindent\textbf{Part (b) 102,222}\\
+$\mathbf{Sol^n:}$
+\begin{align*}
+\intertext{We know}
+gcd(102,222)=6&=18-12
+\intertext{and also $102=18(5)+12\implies12=102-18(5)$. So,}
+6&=18-[102-18(5)]=6(18)-102
+\intertext{Now $222=102(2)+18\implies 18=222-102(2)$. So, }
+6&=6[222-102(2)]-102=6(222)+(-13)(102)
+\intertext{$\therefore 6=6(222)-13(102).\qed$}
+\end{align*}
+
+
+\noindent \textbf{Part (c) 666,1414}\\
+$\mathbf{Sol^n:}$
+\begin{align*}
+\intertext{We have $82=10(8)+2\implies$}
+2&=82-10(8)
+\intertext{And since $666=82(8)+10\implies 10=666-82(8)$, then}
+2&=82-[666-82(8)](8)=(-8)666+65(82).
+\intertext{And since $1414=666(2)+82\implies 82=1414-666(2),$ then}
+2&=(-8)666+65(1414-666(2))=-138(666)+65(1414).
+\intertext{$\therefore 2=-138(666)+65(1414).\qed$}
+\end{align*}
+
+
+\newpage
+\noindent \textbf{Part (d) 20785,44350}\\
+$\mathbf{Sol^n:}$
+\begin{align*}
+\intertext{So we have}
+5&=130-25(5)
+\intertext{And since $25=1325-130(10),$ we know}
+5&=130-[1325-130(10)](5)\\
+&=51(130)-5(1325)
+\intertext{And since $130=2780-1325(2)$, we now know }
+5&=51[2780-1325(2)]-5(1325)\\
+&=51(2780)-107(1325)
+\intertext{And since $1325=20785-2780(7),$ we know}
+5&=51(2780)-107[20785-2780(7)]\\
+&=-107(20785)+800(2780)
+\intertext{And since $2780=44350-20785(2),$ we know}
+5&=-107(20785)+800[44350-20785(2)]\\
+&=-1707(20785)+800(44350)
+\intertext{$\therefore 5=-1707(20785)+800(44350).\qed$}
+\end{align*}
+
+
+
+
+
+\begin{exercise}{3.4.5} Find the greatest common divisor of each of the following sets of integers.
+\end{exercise}
+
+\noindent \textbf{Part (a) 6,10,15}\\
+$\mathbf{Sol^n:}$
+\begin{align*}
+\intertext{Notice,}
+gcd(6,10,15)&=gcd(6,gcd(10,15))\\
+\intertext{Quickly,} 
+gcd(10,15)&\implies\\
+15&=10(1)+5\\
+10&=5(2)+0\\
+\implies gcd(10,15)&=5\\
+\intertext{Now we have}
+gcd(6,(5))&\implies\\
+6&=5(1)+1\\
+5&=1(5)+0\\
+\implies gcd(6,5)&=1.\\
+\intertext{Therefore,}
+gcd(6,10,15)&=1.\qed\\
+\end{align*}
+
+
+\noindent \textbf{Part (b) 70,98,105}\\
+$\mathbf{Sol^n:}$
+\begin{align*}
+\intertext{Notice,}
+gcd(70,98,105)&=gcd(gcd(70,105),98)\\
+\intertext{Now,}
+gcd(70,105)&\implies\\
+105&=70(1)+35\\
+70&=35(2)+0\\
+\implies gcd(70,105)&=35\\
+\intertext{So then,}
+gcd(gcd(70,105),98)&=gcd(35,98).
+\intertext{And} 
+gcd(35,98)&\implies\\
+98&=35(2)+28\\
+35&=28(1)+7\\
+28&=7(4)+0\\
+\intertext{So} 
+gcd(35,98)&=7\\
+\intertext{And}
+\therefore gcd(70,98,105)&=7.\qed\\
+\end{align*}
+
+
+\noindent \textbf{Part (c) 280,330,405,490}\\
+$\mathbf{Sol^n:}$
+\begin{align*}
+\intertext{Note two calculations...}
+gcd(280,330)&\implies\\
+330&=280(1)+50\\
+280&=50(5)+30\\
+50&=30(1)+20\\
+30&=20(1)+10\\
+20&=10(2)+0\\
+\implies gcd(280,330)&=10.\\
+\intertext{And also}
+gcd(405,490)&\implies\\
+490&=405(1)+85\\
+405&=85(4)+65\\
+85&=65(1)+20\\
+65&=20(3)+5\\
+20&=5(4)+0\\
+\implies gcd(405,490)&=5.\\
+\intertext{Now lets consider,}\\
+gcd(280,330,405,490)&=gcd(gcd(280,330),gcd(405,490))\\
+&=gcd(10,5)\implies\\
+&~~~~~~~~~~10=5(2)+0\\
+&\implies gcd(10,5)=5.\\
+\intertext{Therefore} 
+&gcd(280,330,405,490)=5.\qed\\
+\end{align*}
+
+
+
+
+
+\newpage
+\begin{exercise}{3.4.7 } Express the greatest common divisor of each set of numbers in Exercise 5 as a linear combination of the numbers in that set.
+\end{exercise}
+
+
+\noindent \textbf{Part (a) 6,10,15}\\
+$\mathbf{Sol^n:}$
+\begin{align*}
+\intertext{Note for $gcd(10,15)=5,$} 
+15&=10(1)+5\implies 5=15-10\\
+\intertext{Also $6=5(1)+1\implies 1=6-5.$ So}\\
+1&=6-5=6-(15-10)=6-15+10.
+\intertext{$\therefore 1=6+10-15. \qed$}\\
+\end{align*}
+
+
+\noindent \textbf{Part (b) 70,98,105}\\
+$\mathbf{Sol^n:}$
+\begin{align*}
+\intertext{Note that for}
+gcd(70,98,105)&=7\implies\\
+7&=35-28\\
+\intertext{And since $28=98-35(2)$}
+7&=35-(98-35(2))=3(35)-98\\
+\intertext{Now notice} 
+gcd(105,70) &\implies\\
+35&=105-70\\
+\intertext{So} 
+7&=3(105-70)-98\\
+\therefore 7&=3(105)-3(70)-98.\qed\\
+\end{align*}
+
+
+\noindent \textbf{Part (c) 280,330,405,490}\\
+$\mathbf{Sol^n:}$
+\begin{align*}
+\intertext{Note that for $gcd(10,5)=5$,} 
+5&=10-5\tag{*}\\
+\intertext{Now notice}
+gcd(280,330)&=10 \implies\\
+10&=30-\boxed{20}	&	\land~ 20&=50-30 \\
+\implies10&=30-(50-30)=2(\boxed{30})-50	&	\land~ 30&=280-5(50)\\
+\implies10&=2(280-50(5))-50=2(280)-11(\boxed{50})	&	\land~ 50&=330-280\\
+\implies 10&=2(280)-11(330-280)=13(280)-11(330)\\
+\intertext{And also} 
+gcd(405,490)&=5 \implies\\
+5&=65-\boxed{20}(3)	&	\land~20&=85-65\\
+5&=65-(85-65)(3)=4(\boxed{65})-3(85)	&	\land~65&=405-85(4)\\
+5&=4(405-85(4))-3(85)=4(405)-19(\boxed{85})	&	\land~85&=490-405\\
+5&=4(405)-19(490-405)=23(405)-19(490)\\
+\intertext{Now finally,}
+\therefore 5&=10-5\tag{*}\\
+&=[13(280)-11(330)]-[23(405)-19(490)]\\
+&=13(280)-11(330)-23(405)+19(490)\qed\\
+\end{align*}
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+\end{document}

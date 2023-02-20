@@ -1,0 +1,283 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}} 
+
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{reflection}[2][Reflection]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{proposition}[2][Proposition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+
+%\renewcommand\qedsymbol{$\blacksquare$} 
+%\renewcommand\qedsymbol{$q.e.d.$} 
+%\renewcommand\qedsymbol{$\square$} 
+\usepackage{tikz-cd}
+
+
+\begin{document}
+ 
+
+ 
+%\renewcommand{\qedsymbol}{\filledbox}
+ 
+\title{Homework 4}%replace X with the appropriate number
+\author{Dean Quach\\ %replace with your name
+MATH 3003 - Theory of Numbers} %if necessary, replace with your course title
+\date{Februrary 17, 2023}
+\maketitle
+
+\hrule
+\vspace{5pt}
+I hilariously messed up, I normally have my homework done early... but this time I had done the wrong section. I had done these exercises, but in section 3.4 (instead of 3.3). This is why I didn't print it this morning. (Also to save paper is a better excuse :)
+\hrule
+\vspace{20pt}
+
+
+
+
+\renewcommand\qedsymbol{$\square$} 
+\begin{exercise}{3.3.1} Find the greatest common divisor of each of the following pairs of integers.
+\end{exercise}
+\textbf{Part (a) 15, 35}\\
+$Sol^n:$\\
+The positive divisors 15 := $A=\{1,3,5,15\}$.\\
+The positive divisors 35 := $B=\{1,5,7,35\}$.
+\begin{center}
+So $gcd(15,35)=max(A\cap B)=5.\qed$
+\end{center}
+
+\noindent \textbf{Part (b) 0, 111}\\
+$Sol^n:$\\
+Notice all numbers are divisors of 0 since $c\mid 0,~\forall c\in \Z$
+\begin{center}
+So of course, \(gcd(0,111)=|111|=111.\qed\)
+\end{center}
+
+\noindent \textbf{Part (c) -12, 18}\\
+$Sol^n:$\\
+The positive divisors -12 := $A=\{1,2,3,4,6,12\}$.\\
+The positive divisors 18 := $B=\{1,2,3,6,9,18\}$.
+\begin{center}
+So $gcd(-12,18)=max(A\cap B)=6.\qed$
+\end{center}
+
+\noindent \textbf{Part (d) 99, 100}\\
+$Sol^n:$\\
+The positive divisors 99 := $A=\{1,3,9,11,22,99\}$.\\
+The positive divisors 100 := $B=\{1,2,4,5,10,20,25,50,100\}$.
+\begin{center}
+So $gcd(99,100)=max(A\cap B)=1.\qed$
+\end{center}
+
+\noindent \textbf{Part (e) 11, 121}\\
+$Sol^n:$\\
+The positive divisors 11 := $A=\{1,11\}$.\\
+The positive divisors 121 := $B=\{1,11,121\}$.
+\begin{center}
+So $gcd(11,121)=max(A\cap B)=11.\qed$
+\end{center}
+
+\noindent \textbf{Part (f) 100, 102}\\
+$Sol^n:$\\
+The positive divisors 100 := $A=\{1,2,4,5,10,20,25,50,100\}$.\\
+The positive divisors 18 := $B=\{1,2,3,6,17,34,51,102\}$.
+\begin{center}
+So $gcd(100,102)=max(A\cap B)=2.\qed$
+\end{center}
+
+
+\renewcommand\qedsymbol{$q.e.d.$} 
+\begin{exercise}{3.3.8} Show that the greatest common divisor of an even number and an odd number is odd.
+\end{exercise}
+\begin{proof}
+Let $a,b\in \Z$ such that $a$ is even and $b$ is odd.\\
+Then $a=2n,$ for some $n\in \Z$. Also $b=2m+1$ for some $m\in \Z$.\\
+Now consider $gcd(a,b)$.\\\\
+BWOC, assume that $gcd(a,b)$ is even, and let $gcd(a,b)=d$.\\
+Now we know $2\mid d$. Also by the definition of $gcd$, we know $d \mid a ~\land~ d\mid b$.\\
+Notice, by transitivity, $2\mid d ~\land~ d\mid a \implies 2\mid a$.\\
+But then, by transitivity, $2\mid d ~\land~ d\mid b \implies 2\mid b$. \\
+Contradiction! Since $b$ is odd $\implies 2\nmid b$.\\
+
+\noindent Therefore, $gcd(a,b)$ is odd.
+\end{proof}
+
+
+
+
+\begin{exercise}{3.3.9} Show that if $a$ and $b$ are integers, not both 0, and $c$ is a nonzero integer, then $gcd(ca,cb)=|c|gcd(a,b).$
+\end{exercise}
+\begin{proof}
+Let $a,b\in \Z$ such that they cannot both be 0. Also let $c\in \Z \backslash \{0\}$.\\
+Then $gcd(ca,cb)=d$, where $d\in\Z_{\geq0}$. \\
+
+\noindent Now by Bezout's Thm., we know
+\begin{align*}
+d&=n(ca)+m(cb)\text{, for some $n,m\in\Z$}\\
+&=c(na)+c(mb)\\
+&=c(na+mb)
+\end{align*}
+Small note, we let $c\in \Z\{0\}$
+which includes $\Z_{<0}$. And since $gcd\implies max$, \\even though divisors of $a$ and $b$ are both positive and negative, \\we only need to consider the positive divisors.
+Hence, $d=|c|(na+mb)$.\\
+
+\noindent Therefore $gcd(ca,cb)=|c|gcd(a,b)$.
+\end{proof}
+
+
+\newpage
+\begin{exercise}{3.3.10} Show that if $a$ and $b$ are integers, with $gcd(a,b)=1,$ then \\$gcd(a+b,a-b)=1 ~\lor~2.$ 
+\end{exercise}
+\begin{proof}
+Let $a,b\in \Z$ such that $gcd(a,b)=1$. Also let $d=gcd(a+b,a-b).$\\
+Then $d\mid a+b~\land~a-b$\\
+and then $d\mid (a+b)n+(a-b)m,$ for some $n,m\in\Z.$
+Observe $d\mid 2$ since $d=gcd(2a,2b)=2gcd(a,b)=2(1)=2$. Also we know $d\mid (a+b)n+(a-b)m$. So one can choose\\
+$m=n=1 \implies 2\mid 2a$, and $m=1, n=-1\implies 2\mid 2b$.\\
+Therefore $d\mid 2 \implies d=\{1,2\}.$ 
+\end{proof}
+
+
+
+
+
+\renewcommand\qedsymbol{$\square$} 
+\begin{exercise}{3.3.17} Find a set of three integers that are mutually relatively prime, but any two of which are not relatively prime. (No ex.'s from text)
+\end{exercise}
+$Sol^n:$\\
+This may already exist, but I had found an interesting way to generate sets of integers $\{a_1,a_2,a_3\}$ with these properties.
+Let $p_i$ be a prime number. Then consider the following diagram. 
+
+\begin{center}
+\begin{tikzcd}[row sep=large,column sep=huge]
+p_i \arrow[d, "1" description, Rightarrow] \arrow[rd, "2" description] & p_{i+1} \arrow[ld, "1" description, Rightarrow, bend left] \arrow[rd, "3" description, dotted, bend right] & p_{i+2} \arrow[ld, "2" description] \arrow[d, "3" description, dotted] \\
+a_1                                                                    & a_2                                                                                                        & a_3                                                                   
+\end{tikzcd}
+\end{center}
+
+I cannot prove this, nor do I want to. But it generates the triple of integers when you multiple the two primes on each arrow type/numbered. For example, the textbook one (which I had accidentally recreated using this method):
+
+\begin{center}
+\begin{tikzcd}[row sep=large,column sep=huge]
+p_1=3 \arrow[d, "1" description, Rightarrow] \arrow[rd, "2" description] & p_2=5 \arrow[ld, "1" description, Rightarrow, bend left] \arrow[rd, "3" description, dotted, bend right] & p_3=7 \arrow[ld, "2" description] \arrow[d, "3" description, dotted] \\
+a_1=15                                                                    & a_2=21                                                                                                        & a_3=35                                                                   
+\end{tikzcd}
+\end{center}
+
+Which of course has the properties
+\begin{itemize}
+\item $gcd(15,21,35)=1$
+\item $gcd(15,21)=3\neq1$
+\item $gcd(15,35)=5\neq1$
+\item $gcd(21,35)=7\neq1$
+\end{itemize}
+
+I, of course, then checked if this was an example from the text, and indeed was. So I chose a few more primes. (I had also checked for $gcd$ properties by hand, but the question doesn't technically ask for it (and I'm lazy).
+
+\begin{center}
+\begin{tikzcd}[row sep=large,column sep=huge]
+p_1=13 \arrow[d, "1" description, Rightarrow] \arrow[rd, "2" description] & p_2=17 \arrow[ld, "1" description, Rightarrow, bend left] \arrow[rd, "3" description, dotted, bend right] & p_3=23 \arrow[ld, "2" description] \arrow[d, "3" description, dotted] \\
+a_1=221                                                                    & a_2=299                                                                                                        & a_3=391                                                                   
+\end{tikzcd}
+\end{center}
+
+Which of course has the properties
+\begin{itemize}
+\item $gcd(221,299,391)=1$
+\item $gcd(221,299)=13\neq1$
+\item $gcd(221,391)=17\neq1$
+\item $gcd(299,391)=23\neq1$
+\end{itemize}
+
+So one possible set of three integers that are mutually relatively prime, but any two of which are not relatively prime, are \{221,299,391\}. $\qed$
+
+
+
+
+
+\renewcommand\qedsymbol{$q.e.d.$} 
+\begin{exercise}{3.3.24} Show that if $k$ is a positive integer, then $3k+2$ and $5k+3$ are relatively prime.
+\end{exercise}
+\begin{proof}
+Let $k\in \Z_{>0}$. And set $gcd(3k+2,5k+3)=d$ for some $d\in\Z$.\\
+Then $d\mid n(3k+2)+m(5k+3)$, for some $n,m\in\Z$. WNTS the dividend is equal to 1.\\
+Well take $n=5,~m=-3$. Then \\
+$n(3k+2)+m(5k+3)=5(3k+2)+(-3)(5k+3)=1$\\
+Hence, $d\mid 1 \implies d=1$. So $gcd(3k+2,5k+3)=d=1$\\
+
+\noindent Therefore $3k+2$ and $5k+3$ are relatively prime.
+\end{proof}
+
+
+
+
+
+\begin{exercise}{3.3.25} Show that if $8a+3$ and $5a+2$ are relatively prime for all integers $a$.
+\end{exercise}
+\begin{proof}
+\footnote{($gcd(a+cb,b)=gcd(ab)$), Also the gcd being commutative steps (on the right) might be overkill.}
+\begin{align*}
+gcd(8a+3,5a+2)&=gcd((8a+3)+(-1)(5a+2),5a+2)\\
+&=gcd(3a+1,5a+2)=gcd(5a+2,3a+1)\\
+&=gcd((5a+2)+(-1)(3a+1),3a+1)\\
+&=gcd(2a+1,3a+1)=gcd(3a+1,2a+1)\\
+&=gcd(3a+1-(2a+1),2a+1)\\
+&=gcd(a,2a+1+(-2)(a))\\
+&=gcd(a,1)=1.\\
+\intertext{Therefore}
+gcd(8a+3,5a+2)&=1.
+\end{align*}
+\end{proof}
+
+
+%
+%\noindent \textbf{Part (c) 280,330,405,490}\\
+%$\mathbf{Sol^n:}$
+%\begin{align*}
+%\intertext{Note that for $gcd(10,5)=5$,} 
+%5&=10-5\tag{*}\\
+%\intertext{Now notice}
+%gcd(280,330)&=10 \implies\\
+%10&=30-\boxed{20}	&	\land~ 20&=50-30 \\
+%\implies10&=30-(50-30)=2(\boxed{30})-50	&	\land~ 30&=280-5(50)\\
+%\implies10&=2(280-50(5))-50=2(280)-11(\boxed{50})	&	\land~ 50&=330-280\\
+%\implies 10&=2(280)-11(330-280)=13(280)-11(330)\\
+%\intertext{And also} 
+%gcd(405,490)&=5 \implies\\
+%5&=65-\boxed{20}(3)	&	\land~20&=85-65\\
+%5&=65-(85-65)(3)=4(\boxed{65})-3(85)	&	\land~65&=405-85(4)\\
+%5&=4(405-85(4))-3(85)=4(405)-19(\boxed{85})	&	\land~85&=490-405\\
+%5&=4(405)-19(490-405)=23(405)-19(490)\\
+%\intertext{Now finally,}
+%\therefore 5&=10-5\tag{*}\\
+%&=[13(280)-11(330)]-[23(405)-19(490)]\\
+%&=13(280)-11(330)-23(405)+19(490)\qed\\
+%\end{align*}
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+\end{document}
