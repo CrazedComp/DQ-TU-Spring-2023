@@ -1,0 +1,160 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{reflection}[2][Reflection]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{proposition}[2][Proposition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+%\renewcommand{\qedsymbol}{\filledbox}
+ 
+\title{Homework 1-24-23}%replace X with the appropriate number
+\author{Dean Quach\\ %replace with your name
+MATH 2121 - Mathematical Modeling and Simulation} %if necessary, replace with your course title
+\date{Janurary 24, 2023}
+\maketitle
+
+\hrule
+\vspace{20pt}
+
+
+
+\textbf{Find examples of ABM's, pick one you want to share with the class on \\Tuesday. You can use the provided resources or the internet for your research.}\\
+
+\noindent For your chosen ABM, note the following:
+\begin{enumerate}
+\item What are the agents?
+\item What are their attributes?
+\item What is the environment?
+\item What type of interactions are taking place? How often?
+\item What questions does the ABM seek to answer?
+\item What are the results from the simulation?
+\end{enumerate} 
+
+$Sol^n:$ John Conway's "Game of Life"
+- It wasn't called an agent based model when it was originally created. 
+- But it is the model most people refer to when it comes to the concept of an ABM 
+- its like the abstraction/generalization/pure math version of ABM's. which interestingly has many parallel's to video games
+- Funfact: it is called a "0-player game", does not require outside input like us holding a nob and tweaking it, you just let it do its thing until you see patterns, the game stops/dies, or chaos/infinity.
+
+---
+
+1. What are the agents?
+	- Grid Squares, "you can think of this as groups of people"
+2. What are their attributes?
+	- Alive/On, or Dead/Off
+3. What is the environment?
+	- An infinite 2-dimensional checkerboard (of equal spacing)
+4. What type of interactions are taking place? How often?
+	- Note: each square has 8 squares "next to/touching" it
+	- Original "Rules/Interactions" (people have made many other rules, since this is an ABM, once you have a model you can change rules/tweak numbers)
+		- Any *living* cell with *fewer than 2* dies. (dies of isolation)
+		- Any *living* cell with *2-3 live* neighbors continue to *live*. (lives on to the next generation)
+		- Any *living* cell with *more than 3* dies. (dies of overpopulation)
+			- Any *dead* cell with *3 live* neighbors becomes alive again. (reproduce)
+		- Its time "interval" is more just turned based. 
+			- $t=0$:= initial state (with whatever pattern you'd like to start with)
+			- $t=1$:= the first changed state
+			- $t=2$:= the second state...
+			- ...
+			- $t=n,~for~some~n\in \mathbb{N}$
+			- $t=\infty$ ?
+1. What questions does the ABM seek to answer?
+	- Stanislaw Ulam was working at the Los Alamos national laboratory (sante fe new mexico) 1940's he was trying to study the growth of crystals, 
+	- John von Neumann also was working on self replicating systems and the notion of a robot building another robot. the kinematic model.
+		- ended up writting "the general and logical theory of automata"
+		- ulam then recomeded using a discrete system
+		- Invented first system of cellular automata
+			- created an existence proof that a patern would make endless copies of its self.
+	- But back to Conway, inspired by this, 
+		- he made many two dimensional cellular automaton rules, 
+			- interested in unpredicatble cellular automaton
+			- wanted to find rules that were simple, alow patterns to emerge, "apparently" grow without limit
+			- make it **specifically "difficult to prove"**
+1. What are the results from the simulation?
+	- a.  describe how life can evolve from an intial state, but more abstractly
+	- b.  the answer is, this is its another example of the undecidability of mathematics 
+		- Godel's Incompletness theorem
+			- Complete X
+				- In any system of mathematics with basic arithmetic, there will always be true statements, that are impossible to prove.
+			- Consistent?
+				- YOU can only have a system that is consistent but not complete
+				- SO. Any system of math that is consistent cannot prove its own consistency
+			- Decidable X
+				- Is there an algorithm that can always a statement always follows from the axioms
+					- This whole result is similar to the ABM version of the halting problem developed for the turing machine.
+				- Given the initial (even small pattern), you cannot see if a game will do one of the following...
+				- "Undecidable", no possible algorithm/method to find what will happen
+	- Patterns
+		- Some Still lifes 
+		- Oscilators
+		- Space ships
+	- Chaos and grows forever
+	- Fizzles out/everyone dies
+
+
+
+
+
+%\begin{theorem}{2.15} %You can use theorem, exercise, problem, or question here.  Modify x.yz to be whatever number you are proving
+%An odd integer times an odd integer results in an odd integer.
+%\end{theorem}
+% 
+%\begin{proof} %You can also use solution in place of proof.
+%Assume m and n are both odd integers.\\
+%Let m = 2k+1, and n = 2j+1\\
+%So mn = 4kj+2k+2j+1\\
+%Which factors into 2(2kj+k+j)+1.\\
+%
+%
+%%Note 1: The * tells LaTeX not to number the lines.  If you remove the *, be sure to remove it below, too.
+%%Note 2: Inside the align environment, you do not want to use $-signs.  The reason for this is that this is already a math environment. This is why we have to include \text{} around any text inside the align environment.
+%By definition 2.9 (2kj+k+j) is an integer.\\
+%so by definition 2.10 mn is an odd integer.\\\\
+%\end{proof}
+%
+%\begin{theorem}{2.12} %You can use theorem, exercise, problem, or question here.  Modify x.yz to be whatever number you are proving
+%The product of an odd integer and an even integer is odd.\\\\
+%\end{theorem}
+%\begin{proof} %You can also use solution in place of proof.
+%The product of 2 times 3 is 6, which is an even number.
+%
+%
+%\end{proof}
+
+
+
+
+
+
+
+
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+ 
+\end{document}
