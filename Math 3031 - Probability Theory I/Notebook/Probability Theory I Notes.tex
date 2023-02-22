@@ -8,10 +8,13 @@
 \usepackage{textcomp}
 %\usepackage{array}
 %\usepackage{xy}
-\usepackage{fancyhdr}
 \usepackage{tikz}
+\usepackage{tikz-cd}
 \usepackage{cancel}
+\usepackage{graphics}
+\usepackage{caption}
 
+\usepackage{fancyhdr}
 \pagestyle{fancy}
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
@@ -128,14 +131,14 @@ Edition 1
 \newpage
 \section*{\center \normalsize Other Notes}
 \begin{center}
-2 midterms $\implies 20\%$ each
-Final $\implies 35\%$
+2 Midterms $\implies 20\%$ each\\
+Final $\implies 35\%$\\
 
-Quizzes $\implies 12\%$ each
-(every other Friday)
+Quizzes $\implies 12\%$ each\\
+(every other Friday)\\
 
-HW $\implies 3\%$ each
-(due every Friday)
+HW $\implies 3\%$ each\\
+(due every Friday)\\
 \end{center}
 
 \vspace{50pt}
@@ -143,7 +146,7 @@ HW $\implies 3\%$ each
 \begin{center}
 Office Hours: Wachman 534\\
 MWF 3:00 pm - 4:00 pm\\
-Phone for texting: (215) 983 - 3816\\
+Phone for texting: \textit{removed, because I'm not stupid}\\%(215) 983 - 3816\\
 \end{center}
 
 
@@ -160,6 +163,43 @@ Section 001\\}
 
 
 
+
+
+
+\chapter*{Preface}
+\hspace{\parindent} Those of you who aren't familiar with me, I am just a below average math major. Struggling as always; in his 4th semester at Temple University (Spring 2023). I had originally wrote this for some close friends that I had met along the way, mainly one which had introduced me to a bunch of his other friends which had introduced me to more, like induction or whatever :) 
+
+\begin{center}First I'd like to thank you for looking at my first book. \\Use it for whatever you need.\end{center}
+
+Whether this be an aid to if your sick and you can \\``borrow" my notes like I'm your friend\footnote{its why I typed them up, since my handwritting is cursive. I.E. It's beautiful, but illegible to most.}, or this may be a way for you to see what an undergraduate math course looks like at a (what I would call) normal university. 
+Worst case for me, but best case for you, this could be something that is hilarious to you, not only because of my footnotes, but because you might be; a graduate student, an actual adult (with a full time job), one of my professors (oh dear god), someone I dislike (please no)...a relative or friend (it can't get worse)...\scriptsize or my future self... \normalsize \\
+\textbf{No! God!...No God, please no, No!...NO!...NOOOOO!!!} --- Michael Scott, The Office.
+
+Now, those friends know who they are, and have helped me feel comfortable adopting the phrase I say a lot, which is ``it's like `math major' is my whole fricking personality".
+They did not directly sit down with me, hold a weapon to my head, and made me believe that by force... Rather they had asked me many (and I mean many) questions over 2 years (at this point). 
+Along with doing my research project on the Perfect Cuboid (since my GPA at the time isn't great due to my laziness, so of course I could not get other academic jobs), I feel as if everyone close around me is aware that they are finally helping me break out of my imposter syndrome of being a mathmetician. 
+I certainly believe I will never break out of the imposter syndrome, I definetely do not believe I deserve to be here, let alone have the ``right" to call myself a mathmetician (this feels very wrong for me to say, even type). 
+To me I still feel like I am just a teenager (even though I'm 20 as of writting this), just doing math problems for fun, and equally butchering my quizzes and tests\footnote{Ironically, these close friends I am talking about, have no idea what I am talking about. I am refering to other math classes that kicked my ass. But in the classes I took with them (such as this class and Calc 3), they always saw me get good grades with 0 sleep and 80\% caffienated blood. Hilariously stupid on my end.}. 
+
+I hope this helps as another way someone relates to you, but enough about me and more about the book. These were meant to be my personal notes. 
+I had originally started typing them up in Obsidian, which is a greate program with ``atomic" style linking. 
+But even though it had \LaTeX ~(actually MathJax) and other coding implements, I found myself just linking in a string all the lectures together. 
+Sometimes the atomic style worked, but it more or less became a thing I had to organized, and although I could have set it up with a tutorial on how to make it future proof, I believe it made more sense for me to go back to \LaTeX ~and just comment out what lecture \# it is, and basically write my notes like a book.
+
+I don't know if it is obvious by know, but these, as I said, were meant to be my personal notes. 
+I had actually only meant to share it to those close friends I talked about on my GitHub.
+Anyways, much of this is literally based off of the textbook my course used. 
+Also it wasn't meant to be a book, but I had realized about page 73 (the week of my midterm and me procrastinating as always), that I am basically just writting a book. 
+At this point I had the cool idea that I wanted to print this out for my personal collection, at least I think it'll be pretty cool to have a bunch of books made with ``no additional effort", that are technically mine. 
+And then I could possibly go back and rewrite my old notes for other courses, and the new courses will be an easy case. 
+And then I realized I could probably just publish this. So I hope, like in paragraph 2, that you find this useful or funny, hopefully both.
+\footnote{Also I hope that this is the first book you read out of all of my (hopefully) upcomming books. Since this is my first book, and therefore, this is also the first preface (which should give a good insight to who I am and how I write).} 
+Thank you for reading!
+
+\begin{center}
+\textbf{Disclaimer: Some things I write may be completely wrong. Usually the arithmetic. This is a personal journal, NOT an official study guide/aid. If you fail because of me, (ha!) but I'm not responsible. Go study for real instead of reading this book. Actually no, please read this book to, you might find some interesting things. Also please contact me at deanquach.com if theres any problems. I do want to fix any problems and I'll submit new editions when enough are caught. On the mean time, you should be looking at this from my GitHub. You can message message me there instead.} 
+\end{center}
+%Last sentence of disclaimer eventually: Since this is published, if something seems wrong, my website will also have the errata list for this edition, thanks to the people that reached out to me.
 
 
 
@@ -184,17 +224,19 @@ Section 001\\}
 
 
 
+
+
+
 %%%-------------- Lecture 1: 1/18/23
 \chapter{Experiments with random outcomes}
 \section{Sample Spaces \& Probability}
-\textbf{Definition. (Sample Space)}  The set of all possible outcomes of an expirement is called a sample space, \\denoted by $\Omega$.\\
+\textbf{Definition (Sample Space).}  The set of all possible outcomes of an expirement is called a sample space, \\denoted by $\Omega$.\\
 
 \noindent \textbf{Definition.} A subset of a sample space $\Omega$ is called an ``Event". 
 
-
 \subsection{The Sample Spaces}
-We first look at the notion of Sample Spaces through some examples.
-\textbf{E.g. 1} - Tossing a coin.
+We first look at the notion of Sample Spaces through some examples.\\
+\textbf{E.g. 1.} Tossing a coin.
 \begin{itemize}
 \item$\Omega=\left\{ H,T \right\}$.
 \item$A=\{H\}\subseteq \Omega$.
@@ -209,7 +251,7 @@ We first look at the notion of Sample Spaces through some examples.
 \end{itemize}
 \end{itemize}
 
-\noindent\textbf{E.g. 2} - Rolling a die. (assume 6-sided)
+\noindent\textbf{E.g. 2.} Rolling a die. (assume 6-sided)
 Some examples of events include, 
 \begin{itemize}
 \item $A = \{ even~\#'s \} = \{ 2,4,6 \}$
@@ -223,20 +265,20 @@ i.e. $\{ A,B,\emptyset, \Omega \} \subseteq \Omega$.\\
 \noindent Notice, $P(\emptyset)=0$ always. \\
 Also notice, $``\subseteq" \implies{}$ proper subset. So this is why $\Omega$ is an event itself.
 
-\textbf{Question:} How many posibilities?\\
+\noindent \textbf{Question:} How many posibilities?\\
 Well you can think of each option within a simple sample space as being on or off, a binary choice ${1 \lor 0}$. 
 In the mindset of ``Measure Theory", you can treat all these posibilities/probabilities as measures of a sample space, i.e. asking for ``all the posibilities" $\implies{}$ ``all the subsets" $\implies{}$ 
 ``the cardinality of the (power set)"$:=\mathbb{P}$\footnote{The reason why I will use $\mathbb{P}$ for power set is because in probability theory, $P()$ is already used to describe probability. But for the rest of my notes, I will just specify each time I use it (just in case). I may end up keeping this notation from now on; I will link back to this footnote if need be. Since sometimes its easier to just type $P()$ and also $\mathbb{P}$ is used for polynomial vector space in Theoretical Linear Algebra, but I'll just stop the rant and say "If in this course 3031 notes, and I didn't link back to this, you know what I meant". OH!, also I forgot, but another way is $\mathbb{P}() \implies 2^{\Omega}$, without cardinality symbol, thats the best work around I'll probably also use.
 } of the sample space" $=2^{|\Omega|}=2^6=64$, where in this instance ``$||$" asks for the cardinality of a set. 
 So we have a new idea, \\
 
-\textbf{Idea (Event Space)} The \textit{class} (set) of \textit{all events} of a sample space $\Omega$ is denoted by $\mathcal{F}$.\\
+\noindent \textbf{Idea (Event Space)} The \textit{class} (set) of \textit{all events} of a sample space $\Omega$ is denoted by $\mathcal{F}$.\\
 
 This in itself can be a sample space or an event space, but this is more or less just an informal definition of what an event space should be.
 
 But note, this is for a sample space of $\Omega = \{ 1,2,3,4,...n \}$, noting in real life, rolling a die you can only have \textbf{1 face up}, and therefore $\mathcal{F}= \{ \{1\}, \{2\}, \{3\}, \{4\}, \{5\}, \{6\} \}$.\\
 
-\noindent \textbf{E.g. 2 continued} - Now for Rolling a die. (assume 6-sided), what is $\mathcal{F}$?
+\noindent \textbf{E.g. 2 (continued).} Now for Rolling a die. (assume 6-sided), what is $\mathcal{F}$?
 
 By hand/written out, it would be 
 $$\mathcal{F}= \Big\{ ~\emptyset,$$
@@ -275,7 +317,6 @@ $$\{1,2,3,5,6\}, $$
 $$\{1,2,4,5,6\}, $$
 $$\{1,3,4,5,6\}, $$
 $$\{2,3,4,5,6\},$$
-$$~$$
 $$\Omega ~\Big\}.$$
 
 \noindent Which has $|\mathcal{F}| = 2^{|\Omega|} = 2^{36}$ events (subsets).\\
@@ -284,18 +325,18 @@ Although we can find how many events are in the event space, we don't have a pra
 
 \subsection{The Event Space}
 
-\textbf{Definition. (Event Space)} The collection of all events is called the ``Event Space", denoted by $\mathcal{F}$ (or any calligraphic letter such as $\mathcal{A}$)
+\textbf{Definition (Event Space).} The collection of all events is called the ``Event Space", denoted by $\mathcal{F}$ (or any calligraphic letter such as $\mathcal{A}$)
 
 Now with the example earlier, we may write more efficiently
 $$\mathcal{F}=\Big\{ \{i_1, i_2, i_3, ..., i_k\} ~\Big|~ i_1, i_2, i_3, ..., i_k\in\Omega,$$
 $$\forall~ i_j \neq i_k ~ \text{``distinct"}, ~ for ~ k=0,1,2,3,4,5,6~ \Big\}.$$
 
-\textit{Remark.} This definition of $\mathcal{F}$, is far more concrete since it considers when were not looking for all subsets. 
+\noindent \textit{Remark.} This definition of $\mathcal{F}$, is far more concrete since it considers when were not looking for all subsets. 
 i.e. If you tossed one die, then there are 6 sample points, but also only 6 events (the event that you toss a die and obtain 4 numbers on the top shouldn't be considered). Also look at Ex 1.1 from the Homework as an example of this, noticing $\mathcal{F}$ is obviously not $2^{|\Omega|}=2^{36}$, rather it is just $6*\dot6$ since there are 2 dice with only 1 face from each as an event.\footnote{In fact later we will look at how to count the number of possible events.}
 
 Now, this efficient definition of $\mathcal{F}$ yields the idea of a probability measure $P$ or $\mathbb{P}$.
 
-\noindent \textbf{Definition. (Probability Measure)} Let $\Omega$ be a sample space and $\mathcal{F}$ be the set of all events of $\Omega$. 
+\noindent \textbf{Definition (Probability Measure).} Let $\Omega$ be a sample space and $\mathcal{F}$ be the set of all events of $\Omega$. 
 A ``probability measure" is a function $P: \mathcal{F} \rightarrow \mathbb{R},~s.t.$
 \begin{itemize}
 \item[(i)] $0\leq P(A)\leq 1,~\forall~ A\subseteq \Omega$
@@ -307,11 +348,11 @@ $$P\left( \bigcup\limits_{i=1}^{\infty} A_i\right) = \sum\limits_{i=1}^{\infty}P
 
 \subsection{The Probability Space}
 Important! \\
-\noindent \textbf{Definition (Probability Space)} The triple $(\Omega,\mathcal{F}, P)$ is called a probability space. \footnote{Note, $A_1, A_2, ...$ are said to be pairwise disjoint if $A_i \cap A_j = \emptyset,~\forall~ i\neq j$.}\\
+\noindent \textbf{Definition (Probability Space).} The triple $(\Omega,\mathcal{F}, P)$ is called a probability space. \footnote{Note, $A_1, A_2, ...$ are said to be pairwise disjoint if $A_i \cap A_j = \emptyset,~\forall~ i\neq j$.}\\
 
 \noindent\textbf{Remark.} This is for infinite measures (since we are definind a $\sigma$-algebra). But for finite sequence we have the following theorem.\\
 
-\noindent \textbf{Theorem 1.2} \textit{Let $(\Omega, \mathcal{F}, P)$ be a probability space. Let $A_1, A_2, ...A_n$ be a finite sequence of pair pairwise disjoint events. Then 
+\noindent \textbf{Theorem 1.2.} \textit{Let $(\Omega, \mathcal{F}, P)$ be a probability space. Let $A_1, A_2, ...A_n$ be a finite sequence of pair pairwise disjoint events. Then 
 $$P\left( \bigcup\limits_{i=1}^{n} A_i\right) = \sum\limits_{i=1}^{n}P(A_i).$$}
 
 Basically, this is saying, $\dot{\bigcup}A_i$ for $\infty$ many $\implies{}$ $\dot{\bigcup}A_n$ works for finitely many. Seems doable and reasonable, so...\\
@@ -330,7 +371,6 @@ $$\therefore P\left( \bigcup\limits_{i=1}^{n} A_i\right) = \sum\limits_{i=1}^{n}
 Let $A,B$ be sets. Then
 $$A \times B = \Big\{  (a,b) ~\Big|~ a\in A, ~ b\in B \Big\}.$$
 
-\newpage
 \noindent\textbf{E.g.} Toss a coin \& Roll a die. What is the sample space $\Omega$?
 
 Using what we call a ``Tree Diagram"...
@@ -464,7 +504,7 @@ node[above] {$Die~Toss$};
 
 \subsection{Set Theory Examples}
 %%%------------------- Lecture 2: 1/20/23
-\textbf{Exercise B.4.} Show that identity the "de Morgan" Law, $$\left( \bigcap\limits_i A_i\right)^{C}=\bigcup\limits_i A_i^{C}$$ is true.\\
+\textbf{Exercise B.4.} Show that identity the ``de Morgan" Law, $$\left( \bigcap\limits_i A_i\right)^{C}=\bigcup\limits_i A_i^{C},~~~\text{ is true.}$$\\
 
 \noindent\textit{Recall:} We need to show that the LHS and RHS are subsets of eachother.\\ 
 Similar to ``if and only if", however instead of \textbf{saying} 
@@ -492,7 +532,7 @@ $\implies x \notin A_i=\{y~|~ y\in A_i,~\forall i\}$.\\
 So $x \in \bigcup\limits_i A_i^{C}$\\
 Hence, $\left( \bigcap\limits_i A_i\right)^{C}   \subseteq  \bigcup\limits_i A_i^{C}.$\\
 
-\noindent"$\subseteq$" direction now.\\
+\noindent``$\subseteq$" direction now.\\
 
 \noindent Now let $x \in \bigcup\limits_i A_i^{C}$. \\
 Then $x \in A_i^{C}$, for some $i\in \mathbb{Z}$.\\
@@ -506,9 +546,14 @@ $$\left( \bigcap\limits_i A_i\right)^{C}=\bigcup\limits_i A_i^{C}$$\hfill$q.e.d.
 
 \noindent \textbf{Exercise B.5.} If $A$ and $B$ are sets then let $A triangle B$ denote their symmetric difference: the set of elements that are in exactly one of the two sets. (In words this is “$A$ or $B$, but not both.”) Prove that the symmetric difference is associative.\\
 
-\noindent \textbf{Solution not Proof :)} \\
-\indent We then go over B.5. however he goes over it with a proof by venn diagram. Which is somewhat trivial, and does not require much explanation/studying (which is why I dont really consider it a proof). \textit{no figure here}
-However this is similar to doing proofs by table and I dislike this. But this is one of the few times I'll say, the proof is left as an exercise to the reader.\footnote{I am aware (and not naive...I think), that prooving this properly would take ~10 pages and 5 hours (not actually).}
+\noindent \textit{Solution not Proof :)} \\
+\indent We then go over B.5. however he goes over it with a proof by venn diagram. \textit{Refer to Fig. 1.} Which is somewhat trivial, and does not require much explanation/studying (which is why I dont really consider it a proof). 
+However this is similar to doing proofs by table and I dislike this. But this is one of the few times I'll say, the proof is left as an exercise to the reader.\begin{figure}[h]
+\begin{center}
+\includegraphics[width=2in]{1-20-23 Venn Diagram Proof of B.5.jpg}
+\caption*{Fig. 1}
+\end{center}
+\end{figure}\footnote{I am aware (and not naive...I think), that prooving this properly would take ~10 pages and 5 hours (not actually). Also yess thats my handwritting, see its not that bad, kind of...}
 
 Actually, since I'm stubborn $+$ I'm a nerd $=$ Hard way
 Both are direct proofs.
@@ -537,7 +582,7 @@ $(((A\cap B^{C}) \cup (B \cap A^{C}))\cap C^{C}) \cup (C \cap ((A\cap B^{C}) \cu
 $=(((A\cap B^{C}) \cup (B \cap A^{C}))\cap C^{C}) \cup (C \cap (A\cap B^{C})^{C} \cap (B \cap A^{C})^{C})$\\
 $=(((A\cap B^{C}) \cup (B \cap A^{C}))\cap C^{C}) \cup (C \cap A^f{C} \cup B \cap B^{C} \cup A)$\\
 
-\noindent ... yeah so I give up on this, I'll link a note on this when I find a clever but complete solution. Now that I have officially wasted 30 minutes of my saturday...\qed\\
+\noindent ... yeah so I give up on this, I'll link a note on this when I find a clever but complete solution. Now that I have officially wasted 30 minutes of my saturday...\qed
 
 
 
@@ -715,7 +760,7 @@ $$\textstyle =\frac{n*(n-1)*(n-2)* \cdots *(n-k+1)(n-k)(n-k-1)(n-k-2) *\cdots *3
 $$=\frac{n!}{(n-k)!}.$$
 So therefore
 $$ \#\Omega = nPk = \frac{n!}{(n-k)!}.$$\hfill$q.e.d.$
-
+\newpage
 
 
 
@@ -857,7 +902,7 @@ Note that since $\omega\in \Omega$, then for $\omega \ni n_i \in S$.\\
 But now we can partition $\omega$ and its $k$ elements $n_1,...,n_i,...n_k$, with $n-1$ disjoint unions.\\
 This implies there are now $k + (n-1)$ "objects", which we can take any combination of. Where for each instance of two adjacent disjoint unions, we take the union of the empty set, i.e. $\cdots \dot{\cup}~\dot{\cup} \cdots = \cdots \dot{\cup}~\emptyset~\dot{\cup} \cdots.$\\
 So then we have \\
-$${n \choose k} \implies {[n + (k-1)] \choose k} \implies {n + k-1 \choose k}= {n+k-1 \choose n-1}. ~~~~~\blacksquare$$
+$${n \choose k} \implies {[n + (k-1)] \choose k} \implies {n + k-1 \choose k}= {n+k-1 \choose n-1}. ~~~~~\square$$
 
 Summary: Just Memorize
 \begin{enumerate}
@@ -905,7 +950,7 @@ Lets seperate this into the probability of 2 days, and probability of 3 days (wh
 $$P(W~W~else)+P(W~else~W)+P(else~W~W)+P(W~W~W) $$
 $$= \frac{1*1*49}{50*50*50}*3+\frac{1*1*1}{50^3}.~~~\square$$
 
-\newpage
+
 \noindent \textbf{E.g. 1.13} Suppose we have a class of $24$ students.
 \begin{itemize}\item [(a)] A team of three children is chosen at random. Find the probability that the team consists of Shane, Heather, and Laura.\end{itemize}
 \textit{Solution.} \\
@@ -944,7 +989,7 @@ $$=\frac{3*4*2}{7*6*5} * {3 \choose 1} = \frac{3*4*2}{7*6*5} * 3 = \dfrac{{3\cho
 The sample space goes on until infinity with discrete steps, so
 $$ \Omega = \big\{ 1,2,3,4,... \big\} \cup \big\{ \infty \big\}.$$
 Also our probability measure should be for a finite amount of trials, set this amount to be ``$k$-trials". Then\footnote{Technnically, we should define a probability measure using the definition. So for and event that is also $A\subseteq \Omega$, we set $P(A)=\sum\limits_{k\in A} P(A)$.},
-$$ P(k) = \frac{5^{k-1}*1}{6^k}.~~~\blacksquare$$
+$$ P(k) = \frac{5^{k-1}*1}{6^k}.~~~\square$$
 \begin{itemize}\item [(b)] Calculate the probability that the number never appears.\end{itemize}
 \textit{Solution.} \\
 The probability that the number never appears implies the probability that there are infinite events.
@@ -960,9 +1005,10 @@ $$P(\infty) = 0.~~~\square$$
 
 
 
-\section{Infinite many outcomes}
+\section{Infinite Many Outcomes}
 \hypertarget{infinitely many outcomes}{Key Idea:} infinite/uncountable sets $\implies{}$ probabilities are continuous over $\mathbb{R}$. ($\mathbb{R}$ is the new thing here). We shall look at some examples, it should be fairly simple.\\
 
+\subsection{Discrete Infinite Outcomes}
 \noindent \textbf{E.g. 1.16} Flip a coin until the first tails comes up. Record the number of flips required as the outcome of the experiment.\\
 \begin{itemize} \item[(a)] Find the sample space.\end{itemize}
 \textit{Solution.}
@@ -982,6 +1028,9 @@ $$=1-\frac{\frac{1}{2}}{\frac{1}{2}}=1-1 = 0.$$
 So the probability that you never get tails/you keep getting heads, in this limit process of a \textbf{fair} coin, is 
 $$P(\infty) = 0.~~~\square$$
 
+\noindent \textit{Remark.} Discrete Infinite Outcomes $\implies{}$ an Infinite Series.
+
+\subsection{Continuous Infinite Outcomes}
 \noindent \textbf{E.g. 1.17}- We pick a real number uniformly at random reom the closed interval $[0,1]$.\\
 \begin{itemize} \item[(a)] Find the sample space. \end{itemize}
 \textit{Solution.}
@@ -990,17 +1039,19 @@ $$\Omega = \{a\in \mathbb{R} ~|~ 0\leq x \leq 1\} = [0,1].~~~\square$$
 \textit{Solution.}
 $$P\left(\frac{1}{2} \leq x \leq \frac{3}{4}\right) = \frac{\frac{3}{4} - \frac{1}{2}}{1} = \frac{1}{4}.~~~\square$$
 
-\noindent \textbf{E.g. 1.18} - Consider a dartboard in the shape of a disk with radius of 9 inches. The bullseye is a disk of diameter $\frac{1}{2}$ inch in the middle of the board. What is the probability that a dart randomly thrown on the board hits the bullseye?\\
+\noindent \textbf{E.g. 1.18} Consider a dartboard in the shape of a disk with radius of 9 inches. The bullseye is a disk of diameter $\frac{1}{2}$ inch in the middle of the board. What is the probability that a dart randomly thrown on the board hits the bullseye?\\
 \textit{Solution.}
 $$P(hitting~the~bullseye) = \frac{Area(bullseye)}{Total~area}$$
 $$ = \frac{\pi \left( \frac{1}{9} \right)^2}{\pi (9)^2} = \frac{\frac{1}{16}}{81} = \frac{1}{(16)(81)}.~~~\square$$
+
+\noindent \textit{Remark.} Continuous Infinite Outcomes $\implies{}$ an Area/Length (Depending on the Sample Space, usually Euclidean space $\mathbb{R}^n$, also usually $n=1,2$).
 
 
 
 
 %%%--------------------- Lecture 5: 1/30/23
 \section{Consequences of \\the Rules of Probability} 
-These are the three main properties that come from the Rules of Probability (i.e. the way we had described and defined our $\sigma$-algebra "$P(A),A\in\mathcal{F}=|\Omega|$" and Probability Space)
+These are the three main properties that come from the Rules of Probability (i.e. the way we had described and defined our $\sigma$-algebra ``$P(A),A\in\mathcal{F}=|\Omega|$" and Probability Space)
 \begin{enumerate}
 \item Decomposition of an event.
 \begin{itemize} \item If $A = \bigcup\limits_{i=1}^\infty A_i$, where $A_1,A_2,...$ are pairwise disjoint events, then $P(A) = \sum\limits_{i=1}^\infty P(A_i)$.\end{itemize}
@@ -1037,14 +1088,14 @@ $=\dfrac{30*10+10*20+30*20}{\frac{60!}{2!*58!}}$\\
 
 $= \dfrac{300+200+600}{    \frac   {\cancelto{30}{60} *59*\cancel{58!}}  {\cancelto{1}{2} *\cancel{58!}    }      }$ \\
 
-$= \dfrac{1100}{30*59} = \dfrac{550}{15*59} = \dfrac{110}{3*59}=\dfrac{110}{117}.~~~\blacksquare$\\
+$= \dfrac{1100}{30*59} = \dfrac{550}{15*59} = \dfrac{110}{3*59}=\dfrac{110}{117}.~~~\square$\\
 
 \noindent \textbf{Recall} If $A_{1},A_{2}, ...$ are pairwise disjoint events, then $$P\left(\bigcup\limits_{i=1}^{\infty}A_{i}\right) = \sum\limits_{i=1}^{\infty}P(A_{i}).$$
 
-\newpage
+
 \noindent \textbf{E.g. 1.20} Peter and Mary take turns rolling a fair die. If Peter rolls 1 or 2 he wins and the game stops. If Mary rolls 3, 4, 5, or 6, she wins and the game stops. They keep rolling in turn until one of them wins. Suppose Peter rolls first.
 \begin{itemize}\item [(a)] What is the probability that Peter wins and rolls at most 4 times?\end{itemize}
-\textit{Solution.} 
+\newpage \textit{Solution.} 
 Let $A_i=\{Peter~wins~at~his~i^{th}~roll\}$\\
 Say the game looks like this...\\
 I order it as ``step number, the player, if they win or not, and probability that they would have won"\\
@@ -1064,7 +1115,7 @@ Then
 &=P(A_{1}) + P(A_{2}) + P(A_{3}) + P(A_{4}) \\\\
 \end{align*}
 \begin{align*}
-&=\displaystyle\sum\limits_{i=1}^{4} \left(\frac{4}{6}* \frac{2}{6}\right)^{i-1} \left(\frac{2}{6}\right)\\\\
+\\&=\displaystyle\sum\limits_{i=1}^{4} \left(\frac{4}{6}* \frac{2}{6}\right)^{i-1} \left(\frac{2}{6}\right)\\\\
 &=\frac{1}{3}\sum\limits_{i=1}^{4} \left(\frac{2}{9}\right)^{i-1}\\\\
 &=\frac{1}{3} \left[ \left(\frac{2}{9}\right)^{0} + \left(\frac{2}{9}\right)^{1}+ \left(\frac{2}{9}\right)^{2} + \left(\frac{2}{9}\right)^{3} \right] \\\\
 &=\frac{1}{3} \left[ \frac{1}{3} + \frac{2}{9} + \left(\frac{2}{9}\right)^{2} + \left(\frac{2}{9}\right)^{3} \right] \\\\
@@ -1081,6 +1132,8 @@ $$\begin{aligned}
 $$\begin{aligned}
 3.~Peter : F : \frac{4}{6}\\
 4.~Mary : F : \frac{2}{6}\\
+5.~Peter : F : \frac{4}{6}\\
+6.~Mary : F : \frac{2}{6}\\
 .\\
 .\\
 .\\
@@ -1249,8 +1302,9 @@ And we know we can take probabilities of these sets, so in general it would look
 \end{align*}
 
 
-Or more concisely (3)
+Or more concisely (3)\small
 $$\boxed {P(A_{1} \cup \cdots \cup A_{n})=\sum\limits_{k=1}^{n} (-1)^{k-1} \sum\limits_{1\leq i_{1} <i_{2} < \cdots < i_{k} \leq n} P(A_{i_{1}} \cap \cdots \cap A_{i_{k}}) }$$
+\normalsize
 
 \noindent \textbf{E.g. 1.27} Suppose $n$ people exchange their hats randomly. Find the probability that no one gets his/her own hat.\\
 
@@ -1325,114 +1379,79 @@ Then,
 \end{itemize}
 $\implies X$ is a random variable.
 
-\subsection{Graphing and Recording Table of Random Variables}
+\subsection{Graphing and Recording \\Table of Random Variables}
 \noindent \textbf{E.g. 1.29} Roll a die 2 times. Let $X$ be the sum of two die. Find $P_x(k)=P(x=k),$ for all $k\in X$.\\
 \textit{Solution.}\\
-Notice $X=\{2,3,4,5,6,7,8,9,10,11,12\}$
+Notice $X=\{2,3,4,5,6,7,8,9,10,11,12\}$.
 
 One can count or graph how many events obtain the sum of two die.
 i.e. for $x=2$, only one possibility...die \#1=1 and die \#2=1.
 Similarly, for 3, one must be 2 and the other 1, so there are two combination.
 
 Alternatively, by graphing (with die \#1 on the ``x-axis", and die \#2 on the ``y-axis")
-%```desmos-graph
-%left=-2; right=10;
-%top=8; bottom=-2;
-%---
-%y=7-x|black
-%
-%(1,1)|blue|label:(Die 1=1,Die2=2)
-%(2,1)|red
-%(1,2)|red
-%(3,1)|green
-%(2,2)|green
-%(1,3)|green
-%(1,4)|purple
-%(2,3)|purple
-%(3,2)|purple
-%(4,1)|purple
-%(5,1)|yellow
-%(4,2)|yellow
-%(3,3)|yellow
-%(2,4)|yellow
-%(1,5)|yellow
-%(1,6)|black
-%(2,5)|black
-%(3,4)|black
-%(4,3)|black
-%(5,2)|black
-%(6,1)|black
-%(2,6)|yellow
-%(3,5)|yellow
-%(4,4)|yellow
-%(5,3)|yellow
-%(6,2)|yellow
-%(6,3)|purple
-%(5,4)|purple
-%(4,5)|purple
-%(3,6)|purple
-%(6,4)|green
-%(5,5)|green
-%(4,6)|green
-%(6,5)|red
-%(5,6)|red
-%(6,6)|blue
-%
-%```
-%
-%With the table of values being
-%
-%| x          | 2              | 3              | 4              | 5              | 6              | 7              | 8              | 9              | 10             | 11             | 12             |
-%| ---------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
-%| $P_{x}(k)$ | $\frac{1}{36}$ | $\frac{2}{36}$ | $\frac{3}{36}$ | $\frac{4}{36}$ | $\frac{5}{36}$ | $\frac{6}{36}$ | $\frac{5}{36}$ | $\frac{4}{36}$ | $\frac{3}{36}$ | $\frac{2}{36}$ | $\frac{1}{36}$ | 
-%
-%Note the symmetry for $P_x(7)$, also note the non-uniformity, where there is less probabilities for the "rarer" cases.
-%
-%We say $P_{x}(k)$ is called the probability mass function of $X$, commonly abbreviated and pronounced "PMF".
-%
-%<br>
-%
-%#### Quick E.g. using the table. $P(x=2,5,7)=?$
-%$Sol^n:$
-%$P(x=2,5,7)$
-%$= P(x=2)+P(x=5) +P(x=7)$
-%$=P_{x}(2)+P_{x}(5)+P_{x}(7)$
-%
-%$=\dfrac{1}{36} + \dfrac{4}{36} + \dfrac{6}{36}= \dfrac{11}{36}.~~~\blacksquare$
-%
-%---
-%## Discrete Random Variable
-%$Def^n:$ 
-%A random variable $X$ is said to be "discrete" if the set of possible values of $X$ is either finite or countable. 
-%
-%E.g. - The [[W3Lect7 - F 2.3.23 - MATH 3031#E.g. 1.29 - Roll a die 2 times. Let $X$ be the sum of two die. Find $P_x(k)=P(x=k),$ for all $k in X$.|previous e.g.]] has discrete random variables since there are finite values of $x$.
-%
-%---
-%## Continuous Random Variable
-%Conversely, consider a continuous interval such as $[0,1]\in \mathbb{R}$.
-%We know about the cardinality of $\mathbb{R}$ compared to $\mathbb{N}$, as $\mathbb{R}$ is uncountable.
-%
-%So $x\in [0,1]\implies$ $x$ is continuous, and $x$ has uncountable possible values.
-%
-%
-%---
-%
-%### E.g. 1.38 - We have a dart board of radius 9 inches. The board is divided into four parts by three concentric circles of radii 1, 3, 6 inches. If our dart hits the smallest disk, we get 10 points, if it hits the next region then we get 5 points, and we get 2 and 1 points for the other 2 regions. Let $x$ denote the number of points we get when we throw a dart randomly at the board. Find the probability of $x$.
-%
-%Note: we are throwing 1 dart with discrete random variables, since for each zone, we get a single number (that isn't on a continuous range).
-%So we should make a table of values (or plot the points if wanted).
-%
-%Our dart board looks something like this
-%- Circles
-%	- $r=1$
-%		- inside of this, $0<r<1$ is 10 points
-%	- $r=3$
-%		- $1<r<3$ is 5 points
-%	- $r=6$
-%		- $3<r<6$ is 2 points
-%	- $r=9$ which is the edge of the board
-%		- $6<x<9$ is 1 points
-%
+
+\begin{figure}[h]
+  \includegraphics[width=4in]{PMF of 2 dice.png}
+\end{figure}
+\noindent With the table of values being
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c|c|c|c|c|c|c|c| }
+\hline
+	$x$ & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\
+\hline 
+	$P_{x}(k)$ & $\frac{1}{36}$ & $\frac{2}{36}$ & $\frac{3}{36}$ & $\frac{4}{36}$ & $\frac{5}{36}$ & $\frac{6}{36}$ & $\frac{5}{36}$ & $\frac{4}{36}$ & $\frac{3}{36}$ & $\frac{2}{36}$ & $\frac{1}{36}$  \\
+\hline
+\end{tabular}
+\end{center}
+Note the symmetry for $P_{X}(7)$, also note the non-uniformity, where there is less probabilities for the ``rarer" cases.
+
+We say $P_{X}(k)$ is called the probability mass function of $X$, commonly abbreviated and pronounced ``PMF".\\
+
+\noindent \textbf{Quick E.g.} Using the table. $P(x=2,5,7)=?$\\
+\noindent \textit{Solution.}
+$P(x=2,5,7)$\\
+$= P(x=2)+P(x=5) +P(x=7)$\\
+$=P_{x}(2)+P_{x}(5)+P_{x}(7)$\\
+$=\dfrac{1}{36} + \dfrac{4}{36} + \dfrac{6}{36}= \dfrac{11}{36}.~~~\square$\\
+
+
+\subsection{Discrete Random Variable}
+\textbf{Definition.} A random variable $X$ is said to be ``discrete" if the set of possible values of $X$ is either finite or countable. \\
+
+\noindent \textbf{E.g. 1.29} Roll a die 2 times. Let $X$ be the sum of two die. Find $P_x(k)=P(x=k),$ for all $k \in X$.\\
+This example has discrete random variables since there are finite values of $x$.\\
+
+\subsection{Continuous Random Variable}
+Conversely, consider a continuous interval such as $[0,1]\in \mathbb{R}$.\\
+We know about the cardinality of $\mathbb{R}$ compared to $\mathbb{N}$, as $\mathbb{R}$ is uncountable.\\
+So $x\in [0,1]\implies x$ is continuous, and $x$ has uncountable possible values.\\
+
+\noindent \textbf{E.g. 1.38} We have a dart board of radius 9 inches. The board is divided into four parts by three concentric circles of radii 1, 3, 6 inches. If our dart hits the smallest disk, we get 10 points, if it hits the next region then we get 5 points, and we get 2 and 1 points for the other 2 regions. Let $x$ denote the number of points we get when we throw a dart randomly at the board. Find the probability of $x$.\\
+
+\noindent \textit{Solution.}
+Note: we are throwing 1 dart with discrete random variables, since for each zone, we get a single number (that isn't on a continuous range).\\
+So we should make a table of values (or plot the points if wanted).\\
+Our dart board looks something like this\\
+We'll have circles with:
+\begin{itemize}
+\item $r=1$
+\begin{itemize}
+\item inside of this, $0<r<1$ is 10 points
+\end{itemize}
+\item $r=3$
+\begin{itemize}
+\item $1<r<3$ is 5 points
+\end{itemize}
+\item $r=6$
+\begin{itemize}
+\item $3<r<6$ is 2 points
+\end{itemize}
+\item $r=9$ which is the edge of the board
+\begin{itemize}
+\item $6<x<9$ is 1 points
+\end{itemize}
+\end{itemize}
+
 %Visually, 
 %
 %```desmos-graph
@@ -1459,335 +1478,515 @@ Alternatively, by graphing (with die \#1 on the ``x-axis", and die \#2 on the ``
 %```
 %
 %
-%And our table of values I will use to calculate, each level down will be an equivalence (so I dont have so many "=" signs).
-%
-%| x          | 1                                                | 2                                                | 5                                                | 10                                   |
-%| ---------- | ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ | ------------------------------------ |
-%| $P_{x}(k)$ | $\dfrac{\pi (9)^{2} - \pi (6)^{2}}{\pi (9)^{2}}$ | $\dfrac{\pi (6)^{2} - \pi (3)^{2}}{\pi (9)^{2}}$ | $\dfrac{\pi (3)^{2} - \pi (1)^{2}}{\pi (9)^{2}}$ | $\dfrac{\pi (1)^{2}}{\pi (9)^{2}}$   |
-%|            | $$\dfrac{45\cancel\pi}{81\cancel\pi}$$           | $$\dfrac{27\cancel\pi}{81\cancel\pi}$$           | $$\dfrac{8\cancel\pi}{81\cancel\pi}$$            | $$\dfrac{\cancel\pi}{81\cancel\pi}$$ |
-%|            | $$\dfrac{45}{81}$$                               | $$\dfrac{27}{81}$$                               | $$\dfrac{8}{81}$$                                | $$\dfrac{1}{81}$$ | 
-%|            | $$\dfrac{5}{9}$$                               | $$\dfrac{1}{3}$$                               | $$\dfrac{8}{81}$$                                | $$\dfrac{1}{81}$$ | 
-%
-%Which are the probabilities of $x.~~~\blacksquare$
-%
-%Notice the sum of all probabilities is 1 $\left(\sum P_{x}(k)=1\right)$.
-%
-%---
-%
-%## Probability Mass Function
-%
-%We probably should finally define the notion of Probability Mass Functions, as we have already observed in different scenarios. 
-%
-%The Idea that the sum of all probabilities being 1 is always true for all PMF's. 
-%This is due to our axiomatic definition of a [[TU Spring 2023/MATH 3031/Lecture Notes/W1Lect1 - W 1.18.23 - MATH 3031#$Def n$ of a probability measure $P$ or $ mathbb{P}$.|Probability Measure]], which is a a function $P:\mathcal{F} \to \mathbb{R},~s.t.~P$ has the properties of a $\sigma-$algebra with total mass $1$.
-%
-%That is, 
-%$Def^n:$ Suppose $X=x_{1},x_{2}, ...$
-%Then we say $P_{x}(x_{k})=P(x=x_{k}),$ for $k=1,2,3,...$
-%is called the probability mass function of $X$.
-%
-%And we know (from paragraph 2)
-%$P_{x}(x_{k})\geq 0$
-%
-%$\displaystyle\sum\limits_{k=1}^{\infty} P_{x} (x_{k})=1$.
-%
-%--- 
-%## Properties of PMF's
-%
-%Now suppose we are given a PMF.
-%Then we should be able to calculate $P_{x}(k)$ for any $x$.
-%But also we cand find properties of these PMF's using the values of $P_{x}(k)$ we find.
-%
-%For example
-%### The weighted sum
-%We say
-%$$Mean~of~X=\sum\limits_{k} kP_{x}(k)$$
-%
-%#### For the [[#E.g. 1.38 - We have a dart board of radius 9 inches. The board is divided into four parts by three concentric circles of radii 1, 3, 6 inches. If our dart hits the smallest disk, we get 10 points, if it hits the next region then we get 5 points, and we get 2 and 1 points for the other 2 regions. Let $x$ denote the number of points we get when we throw a dart randomly at the board. Find the probability of $x$.|previous example]], 
-%
-%$$Mean~of~X=\sum\limits_{k} kP_{x}(k)$$
-%$$= 1* \frac{45}{81} + 2* \frac{27}{81} + 5* \frac{8}{81} + 10* \frac{1}{81}$$
-%$$= \frac{45+54+40+10}{81}$$
-%$$=\frac{109}{81}=1.8395$$
-%
-%<br> 
-%
-%But what does this "mean"? [^1] 
-%
-%This is another form of what you may have learned for the mean in highschool, that being 
-%$$\frac{1}{n}\sum\limits_{i=1}^{n} x_{i}= \frac{x_{1}+x_{2}+\cdots+x_{n}}{n}$$
-%
-%But in probability theory, we have a more sophistcated form of 
-%$$\frac{x_{1}+x_{2}+\cdots+x_{n}}{n}=\sum\limits_{k} kP_{x}(k)$$
-%since the probability measure of a random variable has n in the denominator. 
-%
-%But overall, to answer what does this "mean", we can say that 
-%$x_{1}+x_{2}+\cdots+x_{n}$ is finite, but large (like the a series)
-%so in a limit process, i.e. over time, your over all average score will be (with arbitrarily many $n$ throws)
-%
-%$$\frac{x_{1}+x_{2}+\cdots+x_{n}}{n} \xrightarrow{x\to \infty} 1.8395.$$
-%
-%
-%[^1]: HAHAAAAHahaa haa haahaahaa ha... sorry
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%%%%----------------------------- Lecture 8: 2/6/23 
-%## Homework Questions
-%### [[W4 HW 1.5 - F 2.10.23 - MATH 3031#Exercise 1.17. - An urn contains 4 red balls and 3 green balls. Two balls are drawn randomly.|E.g. 1.17]] - An urn contains 4 red balls and 3 green balls. Two balls are drawn randomly. 
-%
-%#### (a) Let $Z$ denote the number of green balls in the sample when the draws are done without replacement. Find the probability mass function of $Z$.
-%$Sol^n~by~professor:$
-%
-%| Z          | 0                  | 1                                           | 2                                           |
-%| ---------- | ------------------ | ------------------------------------------- | ------------------------------------------- |
-%| $P_{Z}(k)$ | $\dfrac{4*3}{7*7}$ | $\dfrac{{4\choose1}{3\choose1}}{7\choose2}$ | $\dfrac{{4\choose0}{3\choose2}}{7\choose2}$ | 
-%
-%
-%#### (b) Let $W$ denote the number of green balls in the sample when the draws are donw with replacement. Find the probability mass function of $W$.
-%
-%$Sol^n~by~professor:$
-%
-%| W          | 0                  | 1                      | 2                  |
-%| ---------- | ------------------ | ---------------------- | ------------------ |
-%| $P_{W}(k)$ | $\dfrac{4*4}{7*7}$ | $\dfrac{4*3+3*4}{7*7}$ | $\dfrac{3*3}{7*7}$ | 
-%
-%
-%### E.g. 1.16 - We flip a fair coin five times. For every heads you pay me \$1 and for every tails I pay you \$1. Let $X$ denote my net winnings at the end of five flips. Find the possible values and the probability mass function of $X$.
-%
-%Honestly, the $sol^n$ can be found in the last hw, [[W4 HW 1.5 - F 2.10.23 - MATH 3031#Exercise 1.16. - We flip a fair coin five times. For every heads you pay me $1 and for every tails I pay you $1. Let $X$ denote my net winnings at the end of five flips. Find the possible values and the probability mass function of $X$.|homework 1.5]].
-%
-%
-%
-%---
-%# $\S$ 2.1 - Conditional Probability
-%
-%## The Definition of Conditional Probability
-%$Def^n:$ Let $A,B$ be events. The conditional probability of $A$ givin $B$ has occured is defined by
-%$$P(A|B)=P\frac{A\cap B}{P(B)},~if~P(B)=0.$$
-%
-%![[Conditional Prob Venn]]
-%(Visually with a venn diagram, think about what probabilities you are dividng by, and why.)
-%
-%
-%---
-%### E.g. 2.5 - You have 4 reds and 6 greens. Choose 3 balls without replacement. What is the probability you get 2 reds, given that you've have at least 1 red. 
-%
-%$Sol^n:$
-%
-%$$\begin{align*}
-%& P(exactly~2~red~|~at~least~1~red)\\\\
-%&= \frac{P(exactly~2~red~\cap~at~least~1~red)}{at~least~1~red}\\\\
-%&= P\frac{exactly~2~red}{P(at~least~1~red)}\\\\
-%&= \frac{\dfrac{{4\choose 2}{6\choose1}}{4\choose3}}{1-P(no~red)}\\\\
-%&= \frac{\dfrac{{4\choose 2}{6\choose1}}{4\choose3}}{1-\dfrac{{4\choose 1}{6\choose2}}{4\choose3}}
-%\end{align*}$$ 
-%
-%(I do not know if I copied this down correctly.)
-%
-%
-%---
-%## Multiplication Rule
-%
-%$$\boxed{P(A\cap B)=P(B)P(A|B)=P(A)P(B|A)}$$
-%
-%### E.g. - You have 8 reds and 4 greens. Choose 2 balls without replacement. 
-%
-%#### (a) $P(1st~red~|~2nd~red)=?$
-%$Sol^n:$
-%$$\begin{align*}
-%& P(1st~red~|~2nd~red)\\\\
-%&= P(1st~red)P(2nd~red~|~1st~red)\\\\
-%&= \frac{8}{12} * \frac{7}{11}.~~~\blacksquare
-%\end{align*}$$
-%
-%#### (b) $P(2nd~ball~is~red)=?$
-%$Sol^n:$
-%$$\begin{align*}
-%& P(2nd~ball~is~red)\\\\
-%&= P(1st~red\cap 2nd~red)+P(1st~white\cap 2nd~red)\\\\
-%&= P(1st~R)P(2nd~R~|~1st~R)+P(1st~W)P(2nd~R~|~1st~W)\\\\
-%&= \frac{8}{12}* \frac{7}{11} + \frac{4}{12} * \frac{8}{11}.~~~\blacksquare
-%\end{align*}$$
-%
-%
-%---
-%
-%## Theorem - Law of Total Possibility
-%
-%Let $\{B_1,B_2,B_3,...,B_n\}$ be a partition of the sample space $\Omega$. Then 
-%$$P(A)=\sum\limits_{i=1}^{n} P(B_{i}\cap A)=\sum\limits_{i=1}^{n}P(B_{i})P(A\mid B_{i})$$
-%
-%The first equality is the partition, while the second equality is generalizing the conditional probability.
-%
-%<br>
-%
-%Recall: A Partition is a set of sets such that it is a disjoint union of a set.
-%i.e. $\{B_1,B_2,B_3,...,B_n\}$ is called a partition of $\Omega$ if $\bigcup\limits_{i=1}^{n} B_{i}=\Omega$ and $B_{i}\cap B_{j}=\emptyset,~\forall~i\neq j.$
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%%%%-------------------------------- Lecture 9: 2/8/23
-%## Homework Questions
-%### Exercise 2.6 - When Alice spends the day with the babysitter, there is a $0.6$ probability that she turns on the TV and watches a show. Her little sister Betty cannot turn on the TV on by herself. But once the TV is on, Betty watches with probability $0.8$. Tomorrow the girls spend the day with the babysitter.
-%
-%
-%```mermaid 
-%graph LR; 
-%id1((__)) ----P=0.6--> id2((On)); 
-%id1((__)) ----P=0.4--> id3((Off));
-%
-%id2((On)) ----P=1--> id4((Alice watches)); 
-%id2((On)) ----P=.8--> id5((Betty watches));
-%
-%```
-%
-%#### (a) What is the probability that both Alice and Betty watch TV tomorrow?
-%$Sol^n:$
-%$P(Alice~watches~\cap~Betty~watches)$
-%$=P(TV~on)P(Alice~and~Betty~watches~|~TV~on)$
-%$(0.6)(1)(0.8)=(0.6)(0.8)=0.48~.~~~\blacksquare$
-%
-%
-%#### (b) What is the probability that only Betty watches TV tomorrow?
-%$(0.6)(0.8)=0.48~.~~~\blacksquare$
-%
-%
-%#### (c) What is the probability that only Alice watches TV tomorrow?
-%$(0.6)(0.2)=0.12~.~~~\blacksquare$
-%
-%<br>
-%
-%### Exercise 1.19
-%Reference [[W4 HW 1.5 - F 2.10.23 - MATH 3031#Exercise 1.19. - You throw a dart and it lands uniformly a random on a circular dartboard of radius 6 inches. If your dart gets to within 2 inches of the center I will reward you with 5 dollars. But if your dart lands farther than 2 inches away from the center I will give you only 1 dollar. Let $X$ denote the amount of your reward in dollars. Find the possible values and the probability mass function of $X$. | the 1.5 homework]]. $~~~\blacksquare$
-%
-%<br>
-%
-%### Exercise 2.3 - P(a randomly chosen number between 1 and 100 is divisible by 3 | the number has at least 1 digit equal to 5)
-%
-%$Sol^n:$
-%
-%$=P(A|B)=\dfrac{P(A\cap B)}{P(B)}$
-%
-%$B=\{5,15,25,35,45,55,65,75,85,95,50,51,52,53,54,56,57,58,59\}$
-%and $A\cap B = \{15,51,45,54,57,75\}$
-%
-%$\dfrac{\frac{6}{100}}{\frac{19}{100}}=\dfrac{6}{19}.~~~\blacksquare$
-%
-%<br>
-%
-%### Exercise 2.8 - From 52 cards deal three cards without replacement. Find $P(1st~card~is~a~queen,~2nd~is~a~king,~3rd~is~an~ace)$.
-%
-%$Sol^n~\#1:$ Intuitively, 
-%$P(1st~Q,2nd~K,3rd~A)=\dfrac{4}{54} * \dfrac{4}{51} * \dfrac{4}{50}$.
-%
-%$Sol^n~\#2:$ More mathematically,
-%$P(A\cap B \cap C) = P(A)~P(B|A)~P(C|A\cap B)$ (multiplication rule)
-%$=\dfrac{4}{52} * \dfrac{4}{51} * \dfrac{4}{50}$.
-%
-%
-%---
-%# $\S$ 2.2 - Bayes' Formula
-%
-%E.g. Say you have two boxes, 
-%
-%Box 1 := $\{2g,1r\}$
-%Box 1 := $\{2g,3r\}$
-%
-%Suppose we choose a box randomly,
-%then we draw a ball from the selected box.
-%
-%If the sample ball is $r$, what is the conditional probability 
-%that the ball comes from box 1.
-%
-%$Sol^n:$
-%The probability that you get a box 1 or 2 is both $\frac{1}{2}$.
-%For box 1, getting red has probability $\frac{1}{3}$.
-%For box 2, getting red has probability $\frac{3}{5}$.
-%
-%$P(Box~1~|~r)=\dfrac{P(Box~1~\cap~r)}{P(r)}$
-%
-%$=\dfrac{P(Box~1~\cap~r)}{P(Box~1~\cap~r)+P(Box~2~\cap~r)}$
-%
-%$=\dfrac{P(Box~1)P(r~|~Box~1)}{P(Box~1)P(r~|~Box~1)+P(Box~2)P(r~|~Box~2)}$
-%
-%$=\dfrac{\frac{1}{2}* \frac{1}{3}}{\frac{1}{2} * \frac{1}{3} + \frac{1}{2} * \frac{3}{5}}=\dfrac{\frac{1}{3}}{\frac{1}{3} + \frac{3}{5}}$
-%
-%$=\dfrac{\dfrac{1}{3}}{\frac{5+9}{15}}=\dfrac{1}{3}* \dfrac{15}{14}=\dfrac{5}{14}.~~~\blacksquare$
-%
-%---
-%
-%
-%
-%
-%
-%
-%%%%------------------------------- Lecture 10: 2/13/23
-%# $\S$ 2.2 - Bayes' Formula
-%Theorem:
-%
-%Let $B_{1},B_{2}B_{3},...,B_{n}$ be a partition of the smaple space $\Omega$. 
-%Then $$P(B_{i}|A)=\dfrac{P(B_{i})P(A|B_{i})}{\sum\limits_{j=1}^{n}P(B_{j}P(A|B_{j}))},~\forall~i=1,2,3,...,n$$
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%%%%--------------------------------- Lecture 11: 2/15/23
-%# $\S$ 2.2 ex. 
-%
-%### E.g. 2.14 - Suppose we have a medical test that detects a particular disease 96% of the time, but gives false positive 2% of the time. Assume that 0.5% of the population carries the disease. If a random person test positive for the disease, what is the probability that they actually carry the disease?
-%
-%This is a typical example of using bayes theorem.
-%insert fig 1
-%$Sol^n:$
-%
-%
-%# 2.3 - Independence
-%
-%$Def^n:$ Events $A$ and $B$ are independent if 
-%$$P(A\cap B)=P(A)P(B)$$
-%
-%#### E.g. Suppose we have a bog with 2green and 3 red. Choose 2 balls with replacement. $P(1st~ red \cap 2rd ~red)$
-%
-%Since the sample size stayes the same (with replacement), the events are independence.
-%$P(1st~ red \cap 2rd ~red)=P(1st~red)P(2nd~red)$
-%$=\frac{3}{5} * \frac{3}{5}$
-%
-%
-%<br>
-%
-%whats the difference between this and disjoint events
-%
-%<br>
-%
-%well disjoint events you can represent and draw (with venn diagram).
-%You cannot represent independent events.
-%
+And our table of values I will use to calculate, 
+\small
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+	$x$ & 1 & 2 & 5 & 10 \\
+\hline
+ $P_{x}(k)$ & $\dfrac{\pi (9)^{2} - \pi (6)^{2}}{\pi (9)^{2}}$ & $\dfrac{\pi (6)^{2} - \pi (3)^{2}}{\pi (9)^{2}}$ & $\dfrac{\pi (3)^{2} - \pi (1)^{2}}{\pi (9)^{2}}$ & $\dfrac{\pi (1)^{2}}{\pi (9)^{2}}$   \\
+\hline
+	$\parallel$ & $\dfrac{45\cancel\pi}{81\cancel\pi}$           & $\dfrac{27\cancel\pi}{81\cancel\pi}$           & $\dfrac{8\cancel\pi}{81\cancel\pi}$            & $\dfrac{\cancel\pi}{81\cancel\pi}$ \\
+\hline
+	$\parallel$ & $\dfrac{45}{81}$ & $\dfrac{27}{81}$ & $\dfrac{8}{81}$ & $\dfrac{1}{81}$ \\
+\hline
+	$=$ & $\dfrac{5}{9}$ & $\dfrac{1}{3}$ & $\dfrac{8}{81}$ & $\dfrac{1}{81}$\\
+\hline
+\end{tabular}
+\end{center}
+\normalsize
+Which are the probabilities of $x$.\footnote{Notice the sum of all probabilities is 1 $\left(\sum P_{x}(k)=1\right)$.}~~~$\square$
+
+
+
+
+\subsection{Probability Mass Function}
+We probably should finally define the notion of Probability Mass Functions, as we have already observed in different scenarios. \\
+
+The idea that the sum of all probabilities being 1 is always true for all PMF's. 
+This is due to our axiomatic definition of a probability measure, which is a a function $P:\mathcal{F} \to \mathbb{R},~s.t.~P$ has the properties of a $\sigma-$algebra with total mass $1$.\\
+
+That is, 
+\textbf{Definition.} Suppose $X=x_{1},x_{2}, ...$\\
+Then we say $P_{x}(x_{k})=P(x=x_{k}),$ for $k=1,2,3,...$ is called the probability mass function of $X$.\\
+And we know (from paragraph 2) $P_{x}(x_{k})\geq 0$
+$$\implies{} \sum\limits_{k=1}^{\infty} P_{x} (x_{k})=1.$$
+
+
+\subsection{Properties of PMF's}
+Now suppose we are given a PMF.\\
+Then we should be able to calculate $P_{x}(k)$ for any $x$.\\
+But also we cand find properties of these PMF's using the values of $P_{x}(k)$ we find.\\
+For example
+
+\subsubsection{The Weighted Sum}
+We say
+$$Mean~of~X=\sum\limits_{k} kP_{x}(k)$$
+\noindent For the previous example \textbf{1.38}.
+$$Mean~of~X=\sum\limits_{k} kP_{x}(k)$$
+$$= 1* \frac{45}{81} + 2* \frac{27}{81} + 5* \frac{8}{81} + 10* \frac{1}{81}$$
+$$= \frac{45+54+40+10}{81}$$
+$$=\frac{109}{81}=1.8395.~~~\square$$
+
+
+\noindent But what does this ``mean"\footnote{HAHAAAAHahaa haa haahaahaa ha... sorry}?\\
+
+\noindent This is another form of what you may have learned for the mean in highschool, that being 
+$$\frac{1}{n}\sum\limits_{i=1}^{n} x_{i}= \frac{x_{1}+x_{2}+\cdots+x_{n}}{n}$$
+But in probability theory, we have a more sophistcated form of 
+$$\frac{x_{1}+x_{2}+\cdots+x_{n}}{n}=\sum\limits_{k} kP_{x}(k)$$
+since the probability measure of a random variable has n in the denominator. \\
+
+But overall, to answer what does this ``mean", we can say that 
+$x_{1}+x_{2}+\cdots+x_{n}$ is finite, but large (like the a series)
+so in a limit process, i.e. over time, your over all average score will be (with arbitrarily many $n$ throws)
+$$\frac{x_{1}+x_{2}+\cdots+x_{n}}{n} \xrightarrow{x\to \infty} 1.8395.$$
+
+
+
+
+
+
+
+
+
+
+
+%%%----------------------------- Lecture 8: 2/6/23 
+\subsection{Random Variables and \\PMF Examples}
+\noindent \textbf{E.g. 1.17} An urn contains 4 red balls and 3 green balls. Two balls are drawn randomly. 
+\begin{itemize} \item [(a)] Let $Z$ denote the number of green balls in the sample when the draws are done without replacement. Find the probability mass function of $Z$.\end{itemize}
+\textit{Solution by Professor.}\\
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+	Z & 0 & 1 & 2\\
+\hline
+	$P_{Z}(k)$ & $\dfrac{4*3}{7*7}$ & $\dfrac{{4\choose1}{3\choose1}}{{7\choose2}}$ & $\dfrac{{4\choose0}{3\choose2}}{{7\choose2}}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{itemize} \item [(b)] Let $W$ denote the number of green balls in the sample when the draws are donw with replacement. Find the probability mass function of $W$. \end{itemize}
+\textit{Solution by Professor.}\\
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+	Z & 0 & 1 & 2\\
+\hline
+	$P_{W}(k)$ & $\dfrac{4*4}{7*7}$ & $\dfrac{4*3+3*4}{7*7}$ & $\dfrac{3*3}{7*7}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent \textbf{E.g. 1.16} We flip a fair coin five times. For every heads you pay me \$1 and for every tails I pay you \$1. Let $X$ denote my net winnings at the end of five flips. Find the possible values and the probability mass function of $X$.\\
+\textit{Solution.} ...can be found in the last hw, homework 1.5.~~~$\square$\\
+
+\noindent \textbf{Exercise 1.19} You throw a dart and it lands uniformly a random on a circular dartboard of radius 6 inches. If your dart gets to within 2 inches of the center I will reward you with 5 dollars. But if your dart lands farther than 2 inches away from the center I will give you only 1 dollar. Let $X$ denote the amount of your reward in dollars. Find the possible values and the probability mass function of $X$.\\
+\textit{Solution.} ...can be found in the last hw, homework 1.5.~~~$\square$
+
+
+
+
+
+\chapter{Conditional Probability and Independence}
+\section{Conditional Probability}
+\textbf{The Definition of Conditional Probability}
+\begin{center}
+Let $A,B$ be events. The conditional probability of $A$ given $B$ has occured is defined by
+$$P(A|B)=\frac{P(A\cap B)}{P(B)},~\text{if}~P(B)neq0.$$
+\end{center}
+
+\includegraphics[width=2in]{Conditional Prob Venn Diagram.png}
+(Visually with a venn diagram, think about what probabilities you are dividng by, and why.)
+\newpage
+
+
+\noindent \textbf{E.g. 2.5} You have 4 reds and 6 greens. Choose 3 balls without replacement. What is the probability you get 2 reds, given that you've have at least 1 red. \\
+\textit{Solution.}\footnote{(I do not know if I copied this down correctly.)}
+\begin{align*}
+& P(exactly~2~red~|~at~least~1~red)\\
+&= \frac{P(exactly~2~red~\cap~at~least~1~red)}{at~least~1~red}\\
+&= P\frac{exactly~2~red}{P(at~least~1~red)}\\
+&= \frac{\dfrac{{4\choose 2}{6\choose1}}{{4\choose3}}}{1-P(no~red)}\\\\
+&= \frac{\dfrac{{4\choose 2}{6\choose1}}{{4\choose3}}}{1-\dfrac{{4\choose 1}{6\choose2}}{{4\choose3}}}\cdots~~~\square
+\end{align*}
+
+
+\subsection{Multiplication Rule}
+$$\boxed{P(A\cap B)=P(B)P(A|B)=P(A)P(B|A)}$$
+\textit{Proof.} By the Definition of Conditional Probability, we have
+$$P(A|B)=\frac{P(A\cap B)}{P(B)},~\text{if}~P(B)\neq0.$$ 
+But of course,
+$$P(B)P(A|B)=\frac{P(A\cap B)}{P(B)}P(B)\implies{}P(B)P(A|B)=P(A\cap B)$$
+Therefore, $$P(A\cap B)=P(B)P(A|B)$$\hfill$q.e.d.$
+
+\noindent \textbf{E.g.} You have 8 reds and 4 greens. Choose 2 balls without replacement. 
+\begin{itemize}\item [(a)] $P(1st~red~|~2nd~red)=?$ \end{itemize}
+\textit{Solution.}
+\begin{align*}
+& P(1st~red~|~2nd~red)\\\\
+&= P(1st~red)P(2nd~red~|~1st~red)\\\\
+&= \frac{8}{12} * \frac{7}{11}.~~~\square
+\end{align*}
+
+\begin{itemize}\item [(a)] $P(2nd~ball~is~red)=?$ \end{itemize}
+\textit{Solution.}
+\begin{align*}
+& P(2nd~ball~is~red)\\\\
+&= P(1st~red\cap 2nd~red)+P(1st~white\cap 2nd~red)\\\\
+&= P(1st~R)P(2nd~R~|~1st~R)+P(1st~W)P(2nd~R~|~1st~W)\\\\
+&= \frac{8}{12}* \frac{7}{11} + \frac{4}{12} * \frac{8}{11}.~~~\square
+\end{align*}
+
+\subsection{Law of Total Possibility}
+\textbf{Theorem}\\
+Let $\{B_1,B_2,B_3,...,B_n\}$ be a partition\footnote{Recall: A Partition is a set of sets such that it is a disjoint union of a set.
+i.e. $\{B_1,B_2,B_3,...,B_n\}$ is called a partition of $\Omega$ if $\bigcup\limits_{i=1}^{n} B_{i}=\Omega$ and $B_{i}\cap B_{j}=\emptyset,~\forall~i\neq j.$} of the sample space $\Omega$. Then 
+$$\boxed{P(A)=\sum\limits_{i=1}^{n} P(B_{i}\cap A)=\sum\limits_{i=1}^{n}P(B_{i})P(A\mid B_{i})}$$
+Where the first equality is the partition, while the second equality is generalizing the conditional probability.
+
+
+
+
+%%%-------------------------------- Lecture 9: 2/8/23
+\subsection{Examples of Conditional Probability}
+\textbf{Exercise 2.6} When Alice spends the day with the babysitter, there is a $0.6$ probability that she turns on the TV and watches a show. Her little sister Betty cannot turn on the TV on by herself. But once the TV is on, Betty watches with probability $0.8$. Tomorrow the girls spend the day with the babysitter.\\
+
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoAmAXVJADcBDAGwFcYkQQBfU9TXfQigCMpAMzU6TVuwAqANQB+AeQBiKrjxAZseAkRFCJDFm0Qh5ywt146BRcqWJGppkAEFGWAMYwFAdXocLwALeA0bfj0UByoaY2kzACEYHBwATwACAHdAkLDOCRgoAHMwlFAAMwAnCABbJDIQHAgkERBGegAjGEYABT5dQRAsMGxYEDiXdl6AXmIAOgAWcJBquoaaZqQHdq6e-tso4dGsccmTabn5gDYVtfrEHa3EURoO7r6BuzMRsbZzhIgWZCO41B5PFqIRZvPafQ5DX6nf6SC5mWYLAAcXEonCAA
+\begin{tikzcd}
+                                                                   &                                                                     & Alice~Watches \\
+                                                                   & TV~On \arrow[ru, "P=1" description] \arrow[rd, "P=0.8" description] &               \\
+{} \arrow[rd, "P=0.4" description] \arrow[ru, "P=0.6" description] &                                                                     & Betty~ watches \\
+                                                                   & TV~OFF                                                              &              
+\end{tikzcd}
+
+
+
+\begin{itemize} \item [(a)] What is the probability that both Alice and Betty watch TV tomorrow? \end{itemize}
+\textit{Solution.}
+\begin{align*}
+&P(Alice~watches~\cap~Betty~watches)\\
+&=P(TV~on)P(Alice~and~Betty~watches~|~TV~on)\\
+&=(0.6)(1)(0.8)=(0.6)(0.8)=0.48~.~~~\square
+\end{align*}
+
+\begin{itemize} \item [(b)] What is the probability that only Betty watches TV tomorrow? \end{itemize}
+\textit{Solution.}
+$(0.6)(0.8)=0.48~.~~~\square$
+
+\begin{itemize} \item [(c)] What is the probability that only Alice watches TV tomorrow? \end{itemize}
+\textit{Solution.}
+$(0.6)(0.2)=0.12~.~~~\square$\\
+
+\noindent \textbf{Exercise 2.3} \\
+$P($a randomly chosen number between 1 and 100 is divisible by 3 $|$ the number has at least 1 digit equal to 5$)$\\
+\textit{Solution.}\\
+$P=P(A|B)=\dfrac{P(A\cap B)}{P(B)}$\\
+$B=\{5,15,25,35,45,55,65,75,85,95,$\\
+$50,51,52,53,54,56,57,58,59\}$\\
+
+\noindent and $A\cap B = \{15,51,45,54,57,75\}$
+$$\dfrac{\frac{6}{100}}{\frac{19}{100}}=\dfrac{6}{19}.~~~\square$$
+
+\newpage
+\noindent \textbf{Exercise 2.3} From 52 cards deal three cards without replacement. Find $P(1st~card~is~a~queen,~2nd~is~a~king,~3rd~is~an~ace)$.\\
+
+\noindent \textit{Solution 1.} \\
+Intuitively, 
+$$P(1st~Q,2nd~K,3rd~A)=\dfrac{4}{54} * \dfrac{4}{51} * \dfrac{4}{50}.~~~\square$$\\
+
+\noindent \textit{Solution 2.} \\
+More mathematically,\\
+$$P(A\cap B \cap C) = P(A)~P(B|A)~P(C|A\cap B)$$ \begin{center}(using multiplication rule)\end{center}
+$$=\dfrac{4}{52} * \dfrac{4}{51} * \dfrac{4}{50}.~~~\square$$
+
+
+
+
+
+\section{Bayes' Formula}
+\textbf{E.g.} Say you have two boxes, \\
+Box 1 := $\{2g,1r\}$\\
+Box 1 := $\{2g,3r\}$\\
+
+\noindent Suppose we choose a box randomly,
+then we draw a ball from the selected box.\\
+If the sample ball is $r$, what is the conditional probability 
+that the ball comes from box 1.
+\newpage
+\noindent \textit{Solution.}\\
+The probability that you get a box 1 or 2 is both $\frac{1}{2}$.\\
+For box 1, getting red has probability $\frac{1}{3}$.\\
+\noindent For box 2, getting red has probability $\frac{3}{5}$.\\
+\begin{align*}
+&P(Box~1~|~r)\\
+&=\dfrac{P(Box~1~\cap~r)}{P(r)}\\
+&=\dfrac{P(Box~1~\cap~r)}{P(Box~1~\cap~r)+P(Box~2~\cap~r)}\\
+&=\dfrac{P(Box~1)P(r~|~Box~1)}{P(Box~1)P(r~|~Box~1)+P(Box~2)P(r~|~Box~2)}\\
+&=\dfrac{\frac{1}{2}* \frac{1}{3}}{\frac{1}{2} * \frac{1}{3} + \frac{1}{2} * \frac{3}{5}}\\
+&=\dfrac{\frac{1}{3}}{\frac{1}{3} + \frac{3}{5}}\\
+&=\dfrac{\dfrac{1}{3}}{\frac{5+9}{15}}=\dfrac{1}{3}* \dfrac{15}{14}=\dfrac{5}{14}.~~~\square
+\end{align*}
+
+\noindent \textit{Shall we try to generalize this?}\\
+\noindent Say we know, \\
+\begin{center}
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoAmAXVJADcBDAGwFcYkQQBfU9TXfQinKli1Ok1bsAQgH0AjFx4gM2PASLCqNBizaIQs8ot6qBG0gBYxOyftkBmY8r5rByCxWsS9IAIJcxGCgAc3giUAAzACcIAFskMhAcCCQ5GkZ6ACMYRgAFFzN9LDBsWBBtb3ZcgApZOQBKJ2i4hJpkpGEQDOy8gvUikqwyit0q2plyRu5ImPjERPbEe3SsnPzTfpBi0rYR2xAahymlZrm0pJTEDy7V3o3BLcHh8VH9Gt8AHzrjmZbETsW126az6D22Q12L327y+Ex+IFOSGWFyQQNu634m3BzxsPhhRwCnCAA
+\begin{tikzcd}
+                                                                                                          &  & B_1 \arrow[rrdd, "P(A|B_1)" description] &  &   \\
+                                                                                                          &  &                                          &  &   \\
+{} \arrow[rruu, "P(B_1)" description] \arrow[rr, "P(B_2)" description] \arrow[rrdd, "P(B_3)" description] &  & B_2 \arrow[rr, "P(A|B_2)" description]   &  & A \\
+                                                                                                          &  &                                          &  &   \\
+                                                                                                          &  & B_3 \arrow[rruu, "P(A|B_3)" description] &  &  
+\end{tikzcd}
+\end{center}
+
+\noindent \textbf{Definition. 1} Where we call $P(B_1),P(B_2),...,P(B_n)$ the ``Prior Probabilities ".\\
+\textbf{Definition. 2} Where we call $P(B_1),P(B_2),...,P(B_n)$ the ``Posterior Probabilities ".\\
+
+\noindent Of course, \textbf{Main Question:} $P(B_i | A)=?$\\
+i.e. whats the probability going backwards? \\
+
+
+
+
+%%%------------------------------- Lecture 10: 2/13/23
+\noindent\textbf{Theorem.}\\
+Let $B_{1},B_{2},B_{3},...,B_{n}$ be a partition of the smaple space $\Omega$. 
+Then $$\boxed{P(B_{i}|A)=\dfrac{P(B_{i})P(A|B_{i})}{\sum\limits_{j=1}^{n}P(B_{j})P(A|B_{j})},~\forall~i\in\mathbb{N}}$$\\
+\textit{General procedure:}\\
+Quickly remark, $j$ is ``all" the $B_j$'s, while $i$ is the one we want to find (``the specific $B_i$").\\
+--- Calculate $P(A)$. But notice that\\
+--- $P(A)=P(B_1)P(A|B_1)+P(B_2)P(A|B_2)+\cdots+P(B_j)P(A|B_j)$ by the sum of multiplication rules (instead of writting out all the intersection definitions\footnote{however, the professor may ask you to write/prove this for your question, in which case you have to write everything.}, for $j\in\mathbb{N}$.\\
+--- This is exactly what is on the bottom of the theorem, i.e. $P(A)=\sum\limits_{j=1}^{n} P(B_{j})P(A|B_{j})$.\\
+--- Now all one needs to do is find the specific $i$th conditional probability, $P(B_{i})P(A|B_{i})$, where $1<i<j$. Or you could just recalculate it. \\
+--- Then finally calculate $\boxed{P(B_i)=\frac{P(B_i)P(A|B_i)}{P(A)}}$. This is since,  \newpage
+$$\boxed{P(B_i|A)=\frac{P(B_{i})P(A|B_{i})}{P(A)}}$$
+$$=\frac{P(B_{i})P(A|B_{i})}{P(B_1)P(A|B_1)+P(B_2)P(A|B_2)+\cdots+P(B_j)P(A|B_j)}$$\\
+$$=P(B_{i}|A)=\dfrac{P(B_{i})P(A|B_{i})}{\sum\limits_{j=1}^{n}P(B_{j})P(A|B_{j})}$$\\
+which is exactly our theorem, except simplified.
+
+
+
+%%%--------------------------------- Lecture 11: 2/15/23
+\subsection{Weird Observations of\\ Bayes' Theorem}
+Of course, this is not difficult\footnote{seriously, I'm not lying, I think...} after a few examples.\\
+\textbf{E.g.} Say the probability of picking either box is equal.
+\begin{itemize}
+\item Box 1 := $\{2g,1r\}$\\
+\item Box 2 := $\{3g,5r\}$\\
+\end{itemize}
+\noindent Say we randomly choose one box.\\
+Then we draw a ball randomly from the selected box.\\
+If the sample ball is $r$, what is the conditional probability 
+that the ball comes from box \#2.
+\newpage
+\noindent \textit{Proof Style. (like above)}\\
+\begin{align*}
+&P(Box~2~|~r)=\dfrac{P(Box~2~\cap~r)}{P(r)} \\\\
+&=\dfrac{P(Box~2~\cap~r)}{P(Box~2~\cap~r)+P(Box~2~\cap~r)} \\\\
+&=\dfrac{P(Box~2)P(r~|~Box~2)}{P(Box~1)P(r~|~Box~1)+P(Box~2)P(r~|~Box~2)}\\
+&=\dfrac{\frac{1}{2}* \frac{5}{8}}{\frac{1}{2} * \frac{1}{3} + \frac{1}{2} * \frac{5}{8}}\\
+&=\dfrac{\frac{5}{16}}{\frac{1}{6}\left(\frac{8}{8}\right) + \frac{5}{16}\left(\frac{3}{3}\right)}\tag{just making common denominators}\\
+&=\dfrac{\frac{5}{16}}{\frac{8+15}{48}}=\frac{5}{\cancel{16}}* \dfrac{\cancelto{3}{48}}{23}=\dfrac{15}{23}.
+\end{align*}
+
+\hfill $q.e.d.$\\
+
+\noindent \textit{Better Workflow Solution.}\\
+We know:
+\begin{itemize}
+\item $P(B_1)=1/2$
+\item $P(B_2)=1/2$
+\end{itemize}
+We need to find:
+\begin{enumerate}
+\item $P(r)=?$, and remember conditional of $B_2$
+\item $\dfrac{conditional~of~B_2}{P(r)}$
+\end{enumerate}
+Now,
+\begin{align*}
+& P(r)=P(B_1)P(r|B_1)+\boxed{P(B_2)P(r|B_2)}   \tag{$\boxed{\text{remember}}$}\\
+& = \left( \frac{1}{2} \right) \frac{1}{3} + \boxed{\left( \frac{1}{2} \right) \frac{5}{8}}\\
+& = \frac{1}{6} + \boxed{\frac{5}{16}} = \frac{8}{48} + \boxed{\frac{15}{48}} = \mathbf{\frac{23}{48}}
+\end{align*}
+And finally
+\begin{align*}
+& P(B_2|r)=\frac{\boxed{P(B_2)P(r|B_2)}}{\mathbf{P(B_1)P(r|B_1)+P(B_2)P(r|B_2)}}   \\
+& = \frac{\left( \frac{1}{2} \right) \frac{5}{8}}{ \left( \frac{1}{2} \right) \frac{1}{3} + \left( \frac{1}{2} \right) \frac{5}{8}}\\
+& = \frac{\frac{5}{16}}{\frac{23}{48}} = \boxed{\frac{5}{16}}\mathbf{\left(\frac{48}{23}\right)}=\frac{15}{23}.~~~\square
+\end{align*}
+\textit{Remark:} $\frac{15}{23}>\frac{1}{2}$. Or in english, this probability is \textbf{higher} than the prior probability. The probability that you chose the 2nd box if you have a red ball is higher than the probability you choose a random box. Which should make sense to you!\footnote{I hope...}
+
+\textbf{E.g. 2.14} Suppose we have a medical test that detects a particular disease 96\% of the time, but gives false positive 2\% of the time. Assume that 0.5\% of the population carries the disease. If a random person test positive for the disease, what is the probability that they actually carry the disease?\\
+
+This is a typical example of using bayes' theorem. I will use the \textit{Better Workflow Solution.} but even faster.\\
+
+\newpage
+\noindent \hypertarget{better workflow solution faster}{\textit{Better Workflow Solution (Faster).}} \\
+Let $D$ be the event ``you are diseased"\footnote{is this even a word?}, and the $\boxed{\pm}$ is tested positive or negative.\\
+The question asks, $P(D)=?$\\
+A Quick Sketch:\\
+\begin{center}
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQQBfU9TXfQigBMpYtTpNW7ACJceIDNjwEiIoeIYs2iENIB6AYTm8lAogBZRGydpAAdOwCMIADxhRgAak7GFfZYLIluo0mlI6Ds5uHgC0Ppzi7gDm8ESgAGYAThAAtkhkIDgQSOQ0jPSOMIwACv5mOlhg2LAgoTbsAHTExACsvlm5+TRFSCIg5ZU1dSoNTVgtbVqdAJzLfdwZ2XmIpYXFiADMZRVVtaYzII3NbIvhIB3LAGz9W6PD+5bjJ1PngpdzCwkSx0AH4XoNEGMRodjpMzvwLld5jcgXcukJWiA4AALLDpHBDcaNWxwCCMeaYypgKBIGIHYgbEADba7aGfMK2ME0Kk0w4FCanaZ-JEtBKcIA
+\begin{tikzcd}
+                                                                   &  & D \arrow[rr, ".96" description] \arrow[rrdd, "?" description, bend left]    &  & \boxed{+} \\
+{} \arrow[rru, ".005" description] \arrow[rrd, ".995" description] &  &                                                                             &  &           \\
+                                                                   &  & D^C \arrow[rr, "?" description] \arrow[rruu, ".02" description, bend right] &  & \boxed{-}
+\end{tikzcd}
+\end{center}
+\begin{align*}
+&P(D|+)\implies{\text{~find~}}P(+|D)P(D) ~\land~P(+)	\\
+&\text{thinking swap D,+}
+\end{align*}
+Now,
+\begin{align*}
+P(+)&=\boxed{P(D)P(+|D)}+P(D^C)P(+|D^C)\\
+&=\boxed{.005(.96)}+.995(.02)=\boxed{.0048}+.0199\\
+&=\mathbf{.0247}
+\end{align*}
+And finally,
+\begin{align*}
+P(D|+)&=\frac{\boxed{P(D)P(+|D)}}{\mathbf{P(D)P(+|D)+P(D^C)P(+|D^C)}}\\
+&=\frac{\boxed{.0048}}{\mathbf{0.247}}=.194~~~\square
+\end{align*}
+\newpage
+\subsubsection{Some Remarks of E.g. 2.14}
+Observe the ``prior probabilities" are
+\begin{itemize}
+\item $P(D)=.005$
+\item $P(D^C)=.995$
+\end{itemize}
+And the ``posterior probabilities" are
+\begin{itemize}
+\item $P(+|D)=.96$
+\item $P(+|D^C)=.02$
+\item $P(-|D)=?$
+\item $P(-|D^C)=?$
+\end{itemize}
+Notice that we were missing some of these, but it didnt matter since we were trying to find the conditional probability of the first, i.e. $P(D|+)$. Which is easy to see with the tree diagram. 
+\begin{center}
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQQBfU9TXfQigBMpYtTpNW7ACJceIDNjwEiIoeIYs2iENIB6AYTm8lAogBZRGydpAAdOwCMIADxhRgAak7GFfZYLIluo0mlI6Ds5uHgC0Ppzi7gDm8ESgAGYAThAAtkhkIDgQSOQ0jPSOMIwACv5mOlhg2LAgoTbsAHTExACsvlm5+TRFSCIg5ZU1dSoNTVgtbVqdAJzLfdwZ2XmIpYXFiADMZRVVtaYzII3NbIvhIB3LAGz9W6PD+5bjJ1PngpdzCwkSx0AH5WuNGrYoBAcDh3C9BogxiNDsdJmd+BcrvMbkC7l0hOC4AALLDpHBDCFgWxwCCMebgypgKBIGIHYgbEADba7FGfMK2ME0Jksw4FCanaZ-bGA+nU9jQ2HwhKcIA
+\begin{tikzcd}
+                                                                   &  & D \arrow[rr, ".96" description] \arrow[rrdd, "?" description, dotted, bend left]    &  & \boxed{+} \\
+{} \arrow[rru, ".005" description] \arrow[rrd, ".995" description] &  &                                                                                     &  &           \\
+                                                                   &  & D^C \arrow[rr, "?" description, dotted] \arrow[rruu, ".02" description, bend right] &  & \boxed{-}
+\end{tikzcd}
+\end{center}
+In fact, here it is simplified:
+\begin{center}
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQQBfU9TXfQigBMpYtTpNW7ACJceIDNjwEiIoeIYs2iENIB6AYTm8lAogBZRGydpAAdOwCMIADxhRgAak7GFfZYLIluo0mlI6Ds5uHgC0Ppzi7gDm8ESgAGYAThAAtkhkIDgQSOQ0jPSOMIwACv5mOlhg2LAgoTbsAHTExACsvlm5+TRFSCIg5ZU1dSoNTVgtbVqdAJzLfdwZ2XmIpYXFiADMZRVVtaYzII3NbIvhIB3LAGz9W6PD+0fjJ1PngpdzCwkSx0XSErRAcAAFlh0jghuNGrY4BBGPNwZUwFAkDEDsQEpwgA
+\begin{tikzcd}
+                                                                   &  & D \arrow[rr, ".96" description]                 &  & \boxed{+} \\
+{} \arrow[rru, ".005" description] \arrow[rrd, ".995" description] &  &                                                 &  &           \\
+                                                                   &  & D^C \arrow[rruu, ".02" description, bend right] &  & \boxed{-}
+\end{tikzcd}
+\end{center}
+which is the obviously just:
+\begin{center}
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQQBfU9TXfQigBMpYtTpNW7ACJceIDNjwEiIoeIYs2iENIB6AYTm8lAogBYKGydpAAdOwCMIADxhRgAak5dx7gObwRKAAZgBOEAC2SGQgOBBI5DSM9I4wjAAKfMqCIFhg2LAgNJpSOgB0xMQArMYg4VExNPFIIiApaZnZZjr5hWwlNuzlAJwjtdyhEdGISXEJiADMyanpWaYqvQVYRYNawyMAbHUNM20tSyud6-ybedu7EvsVxELFIHAAFlghOE3t+VscAgjB27zSYCgMU4lE4QA
+\begin{tikzcd}
+                                                                   &  & D \arrow[rrd, ".96" description]   &  &           \\
+{} \arrow[rru, ".005" description] \arrow[rrd, ".995" description] &  &                                    &  & \boxed{+} \\
+                                                                   &  & D^C \arrow[rru, ".02" description] &  &          
+\end{tikzcd}
+\end{center}
+Also notice our final value, $P(D|+)=\boxed{.194}$~.\\
+
+\noindent \textbf{This seems very low.}
+\textit{INSERT YOUR CONCERNED FACE.}\\
+Anyways, this is pretty counterintuitive, but there's an interesting ``philosophical" technicality. If you notice the prior probabilies, you can think of this (technically) as the probability that a random chosen person (from the side of the road or something) is sick. This implies, that the probability that they have a false positive is pretty high, since you don't know if they were sick or not. Or you can alternatively think the false positive rate is high since there is a very high chance they aren't actually sick. \\
+
+Thinking like this should be similar to saying, there are more people that are sick that still test positive.
+
+At least compared to those who are sick, even though they almost always test positive.
+
+\subsubsection{\textbf{``Unraveling the Tree"}}
+\textit{I discovered this technique,}\footnote{I didn't search this up, but it has probably been invented somewhere. If so, I do not take credit, but it be cool if I found new math more often...} which is useful in checking if my answer makes sense.\newpage
+\textbf{Claim: }\textit{Depending on the products of each conditional probability, one of the ``branches" have a higher probability than the other.}\\
+Visually, one should think like this:
+\begin{center}
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQQBfU9TXfQigBMpYtTpNW7AFRceIDNjwEiIoeIYs2iELO68lAogBZRGydpAA6YsWMAOOQf4qUp9TU1SdN8gE4-JwU+ZUFkUypPC3YAHRjGejAoLnEYKABzeCJQADMAJwgAWyQyEBwIJHIaBIAjGEYABRCjHSwwbFgQKK12G2IAVi6QAAsYemSdSDA2fRB8opKacqQREFr6psNXEDaOtm7vawDBmlHx9imZ+XnixCqyisQAZmr6Osbm7d2sToPLKz8ADYgjcVktHqY1m8Np9BDt2j99hIej5iEIUpwgA
+\begin{tikzcd}
+                                                                                     &  & * \arrow[rr, ".96" description] &  & .0048 \\
+{} \arrow[rru, ".005" description, no head] \arrow[rrd, ".995" description, no head] &  &                                 &  & \land \\
+                                                                                     &  & * \arrow[rr, ".02" description] &  & .0199
+\end{tikzcd}
+\end{center}
+
+This does have its uses, since your just computing the conditional probabilities ahead of time. 
+
+Let's actually modify \textbf{Ex. 2.14} to make the final value less concerning, I will also use this new method to calculate this even faster, then the faster version, of the\\
+\textit{Better Workflow Solution.}\footnote{you don't believe me, do you...}\\
+
+\textbf{E.g. 2.14 (Modified)} Let the posterior probabilites, i.e. the probability that you are sick or not, be equal. \\
+
+Why? This number \textbf{is} out of thin air (that is $P(D)=P(D^C)=1/2$, but the idea is that ``if you are ate the doctors, you are probably half as likely to be sick or not". But to step away from making this too philosophical, (going back to math) this basically just means the posterior probabilities are normalized, so the only thing that changes final answer is the conditional probabilies. \\
+
+(i.e. if you test positive, you are definitely sick \scriptsize{(at least .96 of the time)} \normalsize and vice versa)
+\newpage
+\noindent \textit{Enough Rambling Dean, Solution by rushing through Procrastination.}\\
+\begin{center}
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQQBfU9TXfQigBMpYtTpNW7ACJceIDNjwEiIoeIYs2iENIB6AYTm8lAogBZRGydpAAdOwCMIADxhRgAak7GFfZYLIluo0mlI6Ds5uHgC0Ppzi7gDm8ESgAGYAThAAtkhkIDgQSOQ0jPSOMIwACv5mOlhg2LAgoTbsAHTExACsvlm5+TRFSCIg5ZU1dSoNTVgtbVqdAJzLfdwZ2XmIpYXFiADMZRVVtaYzII3NbIvhIB3LAGz9W6PD+5bjJ1PngpdzCwkSx0AH4XoNEGMRodjpMzvwLld5jcgXcukJWiA4AALLDpHBDcaNWxwCCMeaYypgKBIGIHYgbEADba7aGfMK2ME0Kk0w4FCanaZ-JEtBKcIA
+\begin{tikzcd}
+                                                                   &  & D \arrow[rr, ".96" description] \arrow[rrdd, "?" description, bend left]    &  & \boxed{+} \\
+{} \arrow[rru, ".5" description] \arrow[rrd, ".5" description] &  &                                                                             &  &           \\
+                                                                   &  & D^C \arrow[rr, "?" description] \arrow[rruu, ".02" description, bend right] &  & \boxed{-}
+\end{tikzcd}
+\end{center}
+$$\parallel$$
+\begin{center}
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQQBfU9TXfQigBMpYtTpNW7ACJceIDNjwEiIoeIYs2iENIB6AYTm8lAogBYKGydpAAdOwCMIADxhRgAak5dx7gObwRKAAZgBOEAC2SGQgOBBI5DSM9I4wjAAKfMqCIFhg2LAgNJpSOgB0xMQArMYg4VExNPFIIiApaZnZZjr5hWwlNuzlAJwjtdyhEdGISXEJiADMyanpWaYqvQVYRYNawyMAbHUNM20tSyud6-ybedu7EvsVxELFIHAAFlghOE3t+VscAgjB27zSYCgMU4lE4QA
+\begin{tikzcd}
+                                                                   &  & D \arrow[rrd, ".96" description]   &  &           \\
+{} \arrow[rru, ".5" description] \arrow[rrd, ".5" description] &  &                                    &  & \boxed{+} \\
+                                                                   &  & D^C \arrow[rru, ".02" description] &  &          
+\end{tikzcd}
+\end{center}
+$$\parallel$$
+\begin{center}
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQQBfU9TXfQinKli1Ok1bsAVFx4gM2PASLCATGIYs2iEDO69FAoqpEaJ2kAB1LAIwgAPGFGAA6ACwAOTrIP9lKE3UaTUkdF2JyH3k+JUFkAGYKMy12azhmAFsohT84tyTg81TLDPocAAsbADNXNwBOb31ow39kEypClJ1rRggAJy4xJwBzeCJQKr6ILMQyEBwIJGEQRnobGEYABRijHSwwbFgQTtCQcOIAVmOQcph6KHZIMDYmyemkOYWkExW1je2WoIQPtDmwThYXHU6lcaLd7o8CC85G8ZssvohEr91lsdv5gQcsEdwexIQA2KIo740dH5LH-XFAkGEsHiLpnYiqClTGaY9EXV7cpC0vkC96IC7UxaIUmcSicIA
+\begin{tikzcd}
+                                                                                   & * \arrow[r, ".96" description] & \boxed{.48} \arrow[rd] &                &              \\
+{} \arrow[ru, ".005" description, no head] \arrow[rd, ".995" description, no head] &                                & \lor                   & \sum \arrow[r] & \mathbf{.49} \\
+                                                                                   & * \arrow[r, ".02" description] & .01 \arrow[ru]         &                &             
+\end{tikzcd}
+\end{center}
+The $.48>.01$ is not important, but good to know, and it makes sense. Now,
+$P(D|+)=\dfrac{\boxed{.48}}{\mathbf{.49}}=.979~~~\square$
+\footnote{See told you so! But also you should probably do it \hyperlink{better workflow solution faster}{\textit{Better Workflow Solution (Faster).}} way for the professor to give most credit. Still, as I said, this useful to check work.}
+
+\noindent \textit{Final Remark} 
+Yes! This value makes sense in this context. The average person will most likely test positive, assuming that they went to the doctors ant have a half chance of being sick in the first place...ok i'll shut up.
+
+
+
+
+
+
+
+\section{Independence}\footnote{somthing I don't believe I have even though im 20 (at the time of writting this book)}
+\textbf{Definition.} Events $A$ and $B$ are independent if 
+$$\boxed{P(A\cap B)=P(A)P(B)}$$
+
+\textbf{E.g.} Suppose we have a bag with 2 green and 3 red. Choose 2 balls with replacement. $P(1st~ red \cap 2rd ~red)$\\
+\textit{Solution} \\
+Since the sample size stays the same (with replacement), the events are independence.\\
+$P(1st~ red \cap 2rd ~red)=P(1st~red)P(2nd~red)$\\
+$=\frac{3}{5} * \frac{3}{5}=\frac{9}{15}$\\
+
+\textbf{Good question from another student:} Whats the difference between this and disjoint events?
+
+
+well disjoint events you can represent and draw (with venn diagram).
+You cannot represent independent events.
+
 %---
 %
 %If $A$ and $B$ are disjoint and independent, then 
-%$$P(A)P(B)=P(A\cap B)=p(\emptyset)=0$$
+%$$P(A)P(B)=P(A\cap B)=P(\emptyset)=0$$
 %$\implies P(A)=0$ or $P(B)=0$.
 %
 %
