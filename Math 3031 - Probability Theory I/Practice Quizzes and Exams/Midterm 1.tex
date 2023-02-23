@@ -1,0 +1,213 @@
+\documentclass[12pt]{report}
+
+\usepackage{fullpage}
+\renewcommand{\baselinestretch}{1}
+
+\usepackage{amsmath, amssymb}
+\usepackage[utf8]{inputenc}
+
+\usepackage[table]{xcolor}
+
+\usepackage{anyfontsize}
+\usepackage{mathptmx}
+\usepackage{t1enc}
+\DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
+\usepackage{mathrsfs}
+
+\usepackage{tikz}
+
+\usepackage{float}
+
+\begin{document}
+
+
+\begin{center}
+\large{Fall 2022}
+\end{center}
+
+\vspace{20pt}
+
+\begin{center}
+\huge{\textbf{Practice Midterm Exam}}
+\end{center}
+
+\begin{center}
+\Large{MATH 3031}
+\end{center}
+
+\begin{center}
+\large{\textbf{Department of Mathematics \\ Temple University}}
+\end{center}
+
+\vspace{30pt}
+
+\begin{center}
+\large{Februrary 22, 2023}
+\end{center}
+
+\vspace{10pt}
+
+\begin{center}
+\large{\textbf{Name:} \hrulefill}
+\end{center}
+
+\begin{center}
+\large{\textbf{Instructor/Section:} \hrulefill}
+\end{center}
+
+
+
+
+\vspace{30pt}
+
+
+\begin{minipage}[b]{80mm}
+\begin{tabular}{c}
+\noindent This exam consists of 6 questions. \\
+
+\noindent This exam will take 50 minutes to complete. \\
+
+\noindent NO calculators.\\
+
+\noindent Show all relevant work.\\
+\noindent \textbf{No work, no credit.}\\
+
+\noindent \textbf{Good Luck!}\\
+\end{tabular}
+\end{minipage}
+\begin{minipage}[b]{80mm}
+\begin{tabular}{ |c|c|c| }
+	\hline
+	\textbf{Question} & \textbf{Max} & \textbf{Points} \\
+	\hline
+	\hline
+	1& \textbf{14} & \\
+	\hline
+	2& \textbf{12} & \\
+	\hline
+	3& \textbf{15} & \\
+	\hline
+	4& \textbf{12} & \\
+	\hline
+	5& \textbf{12} & \\
+	\hline
+	6& \textbf{20} & \\
+	\hline
+	\hline
+	\textbf{Total} & \textbf{20} & \\
+	\hline
+\end{tabular}
+\end{minipage}
+
+\pagebreak
+
+
+
+
+
+
+
+
+\noindent \fbox{7pts} $~$\textbf{1.} We have an urn with 3 red and 10 blue balls. We draw 5 balls, one by one, without replacement. 
+\begin{itemize}
+\item [(a)] Find the probability that the colors we see in order are blue, blue, blue red, blue.		%normal ordered, n choose k, but for each color
+\item [(b)] Find the probability that our sample of balls were all blue.					%normal unordered, n choose k, but #P(b)/#totalP
+	\begin{itemize}
+	\item [(i)] Using part (b), find the probability that the next two balls are red and blue (after the first 5 were blue).   %normal unordered, n choose k, but #P(b+1)#P(r)/#totalP
+	\end{itemize}
+\item [(c)]  Find the probability that our sample of 5 balls has at least 2 green balls. 		%sum of probabilities, dependent (without replacement), P(2g)+P(3g)P+P(4g)+P(4g)
+\end{itemize}
+\pagebreak
+
+
+
+
+
+
+% Note, there needs to be an enter/space between eqach question, as well as the vspace choice
+\noindent \fbox{4pts} $~$\textbf{2.} If $P(A)=\dfrac{1}{2},~P(B)=\dfrac{1}{3},~\text{and}~P(A\cap B)=\dfrac{1}{4}$,
+\begin{itemize}
+\item [(a)] Find $P(A^C\cap B^C)$		%demorgan complement to union, then complement, then inclusion exclusion 
+\item [(b)] Find $P(A \cup B^C)$			%inclusion exclusion,complements, cancelation property of complement P(a)+P(a^C) (and rearranging it)
+\end{itemize}
+\pagebreak
+
+
+
+
+
+\noindent \fbox{8pts} $~$\textbf{3.} An urn contains 3 balls labeled 2, 3, and 4. We draw 2 balls one by one at random with replacement. Let $X$ be the sum of the two numbers on the sample.
+\begin{itemize}
+\item [(a)] Find the possible values of $X$.		%pure observation
+\item [(b)] Find the probability mass function of $X$.			%pure calculation
+\item [(c)] Let $Y=3X-21$. Find the probability mass function of $Y$			%just scale X, same prob
+\item [(d)] Prove that $X$ and $Y$ are dependent for some $(i,j)\in\Omega^2$.			%pf by contradiction, assume they are independent. this is impossible since P(x=3,y=4)
+														%=P({3,4})*P({})
+\end{itemize}
+\pagebreak
+
+
+
+
+
+
+
+\noindent \fbox{4pts} $~$\textbf{4.} We have 3 urns. Urn I has 1 green and 2 red balls, urn II has 2 green and 3 red balls, and urn III has 3 green and 4 red balls. 
+\begin{itemize}
+\item [(a)] We first choose an urn at ransom and then choose a ball randomly from the chosen urn. Find the probability that the ball is red. %conditional prob, useing \sum multiplcation rule
+\item [(b)] Suppose we draw a random ball from urn I and transfer it to urn III. Then we choose a ball randomly from urn III. What is the probability that we draw a green ball from urn III.
+%multiplication rule over the intersection of probs. P(r & 1 cap r &3)=P(R I)*P(R III | R I) + P(R III \cap G I)
+\end{itemize}
+\pagebreak
+
+
+
+
+
+\noindent \fbox{4pts} $~$\textbf{5.} There is a new test for a disease that occurs in about 0.01\% of the population. It detects the disease 99\% of the time. However it has a false positive rate of 10\%. 
+\begin{itemize}
+\item [(a)] What is the probability that the person's result is positive.		%\sum of conditional prob
+\item [(b)] What is the probability that the person actually has the disease if they test positive.		%bayes, use part a 
+\end{itemize}
+\pagebreak
+
+
+
+
+
+\noindent \fbox{4pts} $~$\textbf{6.} Suppose $A,B,C\in\mathcal{F},~s.t.~A,B,C$ are mutually independent. \\
+
+Set $P(A)=.1,~P(B)=.2,~P(C)=.3$. 
+\begin{itemize}
+\item [(a)] $P(A\cap B \cap C^C)$ 		%independence rules
+\item [(b)] $P(A\cup C)$			%inclusion/exclusion principle, then independence on P(AC)
+\item [(c)] $P((A\cup C)\cap B)$
+\item [(d)] Prove that $A\cup C$ is independent of B.
+\end{itemize}
+\pagebreak
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
