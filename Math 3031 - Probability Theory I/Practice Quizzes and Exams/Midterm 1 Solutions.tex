@@ -15,6 +15,7 @@
 \usepackage{mathrsfs}
 
 \usepackage{tikz}
+\usepackage{tikz-cd}
 
 \usepackage{float}
 
@@ -215,20 +216,57 @@ P(A \cup B^C)&=P(A)+P(B^C)-P(AB^C)\\
 \begin{itemize}
 \item [(a)] Find the possible values of $X$.		%pure observation
 \end{itemize}
-\textit{Solution. } $X=\{5,6,7\}.~~~\square$
+\textit{Solution. } $X=\{4,5,6,7,8\}.~~~\square$
 
 \begin{itemize}
 \item [(b)] Find the probability mass function of $X$.			%pure calculation
 \end{itemize}
-\textit{Solution. } $X=\{5,6,7\}.~~~\square$
+\textit{Solution. } \\
+\begin{tabular}{|c|c|c|c|c|c|}
+$X$ & 4 & 5 & 6 & 7 & 8\\
+\hline
+$P_X(k)$ & P(2,2) & $P(2,3)+P(3,2)$ & $P(2,4)+P(4,2)+P(3,3)$ & $P(3,4)+P(4,3)$ & $P(4,4)$\\
+ & $\parallel$ & $\parallel$ & $\parallel$ & $\parallel$ & $\parallel$ \\
+ & $\left(\frac{1}{3}\cdot\frac{1}{3}\right)$ & $\left(\frac{1}{3}\cdot\frac{1}{3}\right)+\left(\frac{1}{3}\cdot\frac{1}{3}\right)$ & $\left(\frac{1}{3}\cdot\frac{1}{3}\right)+\left(\frac{1}{3}\cdot\frac{1}{3}\right)+\left(\frac{1}{3}\cdot\frac{1}{3}\right)$ & $\left(\frac{1}{3}\cdot\frac{1}{3}\right)+\left(\frac{1}{3}\cdot\frac{1}{3}\right)$ & $\left(\frac{1}{3}\cdot\frac{1}{3}\right)$ \\
+ & $\parallel$ & $\parallel$ & $\parallel$ & $\parallel$ & $\parallel$ \\
+ & $\left(\frac{1}{9}\right)$ & 2$\left(\frac{1}{9}\right)$ & 3$\left(\frac{1}{9}\right)$ & 2 $\left(\frac{1}{9}\right)$ & $\left(\frac{1}{9}\right)$\\
+ & $\parallel$ & $\parallel$ & $\parallel$ & $\parallel$ & $\parallel$ \\
+ & $\frac{1}{9}$ & $\frac{2}{9}$ & $\frac{3}{9}$ & $\frac{2}{9}$ & $\frac{1}{9}$\\
+\end{tabular}
 
 \begin{itemize}
-\item [(c)] Let $Y=3X-21$. Find the probability mass function of $Y$			%just scale X, same prob
+\item [(c)] Let $Y=3X-21$. Find the probability mass function of $Y$.			%just scale X, same prob
 \end{itemize}
+\textit{Solution. } \\
+\begin{tabular}{|c|c|c|c|c|c|}
+$X$ & -9 & 6 & 3 & 0 & 3 \\
+\hline
+$P_Y(k)$ & P(2,2) & $P(2,3)+P(3,2)$ & $P(2,4)+P(4,2)+P(3,3)$ & $P(3,4)+P(4,3)$ & $P(4,4)$\\
+ & $\parallel$ & $\parallel$ & $\parallel$ & $\parallel$ & $\parallel$ \\
+ & $\frac{1}{9}$ & $\frac{2}{9}$ & $\frac{3}{9}$ & $\frac{2}{9}$ & $\frac{1}{9}$\\
+\end{tabular}
+
+A.k.a. the same as part (b), $P_X(k)$, but with $A\in X\to A\in Y$ by the function \\$f:X\to Y$, where $x\mapsto 3x-21$.
 
 \begin{itemize}
 \item [(d)] Prove that $X$ and $Y$ are dependent for some $(i,j)\in\Omega^2$.
 \end{itemize}
+\textit{Proof.} \\
+By way of contradiction (BWOC), assume that $X$ and $Y$ are independent event spaces of $\Omega$. \\
+Then by definition, we have $P(X=i,Y=j)=P(X=i)P(Y=j)$. Where $i\in X$ amd $j\in Y$. \\
+
+Set $i=6, j=0$. Notice that $P(X=6,Y=0)=P(X=6)P(Y=0)$\\
+$\implies{}P(\{(2,4),(4,2),(3,3)\}\cap\{(3,4),(4,3)\})=P(\{(2,4),(4,2),(3,3)\})P(\{(3,4),(4,3)\})$. \\
+
+But then the LHS implies
+$P(\{(2,4),(4,2),(3,3)\}\cap\{(3,4),(4,3)\})=P(\emptyset)=0.$\\
+However, the RHS implies
+$P(\{(2,4),(4,2),(3,3)\})P(\{(3,4),(4,3)\})=\dfrac{3}{9}\cdot\dfrac{2}{9}=\dfrac{6}{81}$.\\
+Contradiction! $0\neq \dfrac{6}{81}$.\\
+
+Hence, $X$ and $Y$ are not independent. 
+Therefore $X$ and $Y$ are dependent.\hfill $q.e.d.$
+
 \pagebreak
 
 
@@ -239,10 +277,30 @@ P(A \cup B^C)&=P(A)+P(B^C)-P(AB^C)\\
 
 \noindent \fbox{4pts} $~$\textbf{4.} We have 3 urns. Urn I has 1 green and 2 red balls, urn II has 2 green and 3 red balls, and urn III has 3 green and 4 red balls. 
 \begin{itemize}
-\item [(a)] We first choose an urn at ransom and then choose a ball randomly from the chosen urn. Find the probability that the ball is red. %conditional prob, useing \sum multiplcation rule
+\item [(a)] We first choose an urn at random and then choose a ball randomly from the chosen urn. Find the probability that the ball is red. %conditional prob, useing \sum multiplcation rule
+\end{itemize}
+\textit{Solution. }
+This is a conditional probability problem with sum of multiplication rule.
+\begin{align*}
+P(R)&=P(I)P(R|I)+P(II)P(R|II)+P(III)P(R|III)\\
+&=\dfrac{1}{3}\cdot\frac{2}{3}+\dfrac{1}{3}\cdot\frac{3}{5}+\dfrac{1}{3}\cdot\frac{4}{7}
+=\dfrac{2}{9}+\frac{3}{15}+\frac{4}{21}\\
+&=\frac{1}{3}\left(\dfrac{2}{3}+\frac{3}{5}+\frac{4}{7}\right)=\frac{1}{3}\left(\dfrac{70+63+60}{105}\right)\\
+&=\frac{1}{3}\left(\dfrac{193}{105}\right)=\frac{193}{315}\approx0.6126984.~~~\square
+\end{align*}
+
+\begin{itemize}
 \item [(b)] Suppose we draw a random ball from urn I and transfer it to urn III. Then we choose a ball randomly from urn III. What is the probability that we draw a green ball from urn III.
 %multiplication rule over the intersection of probs. P(r & 1 cap r &3)=P(R I)*P(R III | R I) + P(R III \cap G I)
 \end{itemize}
+\textit{Solution. }\\
+We will use multiplication rule for the conditional probability (transfering the ball), then add intersection of getting a green from III if I say transfered a red ball (which you calculate by multiplying the probabilities since they are ``independent"\footnote{keep in mind, the sample size chaged for $P(G\&III)$, so its different}).
+\begin{align*}
+P(G\&I\cap G\&III)&=P(G\&I)P(G\&III|G\&I)+P(G\&III\cap R\&I)\\
+&=\frac{1}{3}\left(\frac{2+1}{6}\right) + P(G\&III)P(R\&I)\\
+&=\frac{1}{6} + \frac{3}{7}\cdot\frac{2}{3}=\frac{1}{6}+\frac{2}{7}=\frac{7+12}{42}=\frac{19}{42}\approx0.4523809.~~~\square
+\end{align*}
+
 \pagebreak
 
 
@@ -252,8 +310,33 @@ P(A \cup B^C)&=P(A)+P(B^C)-P(AB^C)\\
 \noindent \fbox{4pts} $~$\textbf{5.} There is a new test for a disease that occurs in about 0.01\% of the population. It detects the disease 99\% of the time. However it has a false positive rate of 10\%. 
 \begin{itemize}
 \item [(a)] What is the probability that the person's result is positive.		%\sum of conditional prob
+\end{itemize}
+\textit{Solution. }\\
+\begin{center}
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQQBfU9TXfQigDMpYtTpNW7ACJceIDNjwEiIgEziGLNohDSAegGE5vJQKIA2UZsk6QAHXsAjCAA8YUYAGpOJhX2VBZCsNGi0pXUcXd08AWl9OcQ8Ac3giUAAzACcIAFskMhAcCCRyGkZ6JxhGAAUA810sMGxYEDDbdhqACmkASgBeADpiEfI-bLyCmmKkNXLK6rqzFUbmrFb27U6eowHyWO6+oYBOU+PxnPzEMqKSxBEQCqra+pWQJpa2TYiQbq8AHyOg1OF0miDmtyQDyei1egneaw2Ei2uj+gN2-WIgzGiU4QA
+\begin{tikzcd}
+                                                                                          &  &  & D \arrow[rrr, "P(+|D)=.99" description]       &  &  & \boxed{+} \\
+{} \arrow[rrru, "P(D)=.0001" description] \arrow[rrrd, "P(D^C)=1-P(D)=.9999" description] &  &  &                                               &  &  &           \\
+                                                                                          &  &  & D^C \arrow[rrruu, "P(+|D^C)=0.1" description] &  &  & \boxed{-}
+\end{tikzcd}
+\end{center}
+\noindent So of course (by my method of adding branches), 
+\begin{align*}
+P(+)&=P(D)P(+|D)+P(D^C)P(+|D^C)\\
+&=(.0001*.99)+(.9999*.1)\\
+&=.000099+.09999=.100089.~~~\square
+\end{align*}
+
+\begin{itemize}
 \item [(b)] What is the probability that the person actually has the disease if they test positive.		%bayes, use part a 
 \end{itemize}
+\textit{Solution. }
+Using bayes formula, (my method = branch you want/sum of branches)
+\begin{align*}
+P(D|+)&=\frac{P(D)P(+|D)}{P(+)}\\
+&=\frac{.000099}{.100089}=.0009891.~~~\square
+\end{align*}
+
 \pagebreak
 
 
@@ -265,10 +348,44 @@ P(A \cup B^C)&=P(A)+P(B^C)-P(AB^C)\\
 Set $P(A)=.1,~P(B)=.2,~P(C)=.3$. 
 \begin{itemize}
 \item [(a)] $P(A\cap B \cap C^C)$ 		%independence rules
+\end{itemize}
+\textit{Solution.}\\
+\begin{align*}
+P(A\cap B \cap C^C)&=P(A)P(B)P(C^C) \tag{by independence}\\
+&=P(A)P(B)(1-P(C))\\
+&=.1*.2*(1-.3)=.02*.7=.014.~~~\square
+\end{align*}
+
+
+\begin{itemize}
 \item [(b)] $P(A\cup C)$			%inclusion/exclusion principle, then independence on P(AC)
+\end{itemize}
+\textit{Solution. } By the inclusion-exclusion principle.
+\begin{align*}
+P(A\cup C)&=P(A)+P(C)-P(A\cap C) \\
+&=P(A)+P(C)-(P(A)P(C))\tag{by independence}\\
+&=.1+.3-(.1*.3)=.4-(.03)=.37~~~\square
+\end{align*}
+
+
+\begin{itemize}
 \item [(c)] $P((A\cup C)\cap B)$
+\end{itemize}
+\textit{Solution. } By independence,
+$$P((A\cup C)\cap B)=P(A\cup C)P(B)$$
+and by part (b), we already know $P(A\cup C)$. So of course,
+$$P(A\cup C)P(B)=.37(.2)=.074.~~~\square$$
+
+\begin{itemize}
 \item [(d)] Prove that $A\cup C$ is independent of B.
 \end{itemize}
+\textit{Proof. } Let $A,B,C\in\mathcal{F},~s.t.~A,B,C$ are mutually independent.\\
+
+Notice, since $A$ and $C$ are independent, and mutually independent from $B$, \\
+then a proper subset of $B$, say $\alpha \subset B$, is not part of $A\cup C$. i.e. $\alpha \not \subset A\cup C$.\\
+
+But then $P(B\cap(A\cup C))=P(B)P(A\cup C)$. So $B$ is independent of $A\cup C$.\hfill $q.e.d.$
+
 \pagebreak
 
 
