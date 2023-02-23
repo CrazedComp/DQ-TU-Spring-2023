@@ -1,0 +1,298 @@
+\documentclass[12pt]{report}
+
+\usepackage{fullpage}
+\renewcommand{\baselinestretch}{1}
+
+\usepackage{amsmath, amssymb}
+\usepackage[utf8]{inputenc}
+
+\usepackage[table]{xcolor}
+
+\usepackage{anyfontsize}
+\usepackage{mathptmx}
+\usepackage{t1enc}
+\DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
+\usepackage{mathrsfs}
+
+\usepackage{tikz}
+
+\usepackage{float}
+
+\usepackage{cancel}
+
+\begin{document}
+
+
+\begin{center}
+\large{Spring 2023}
+\end{center}
+
+\vspace{20pt}
+
+\begin{center}
+\huge{\textbf{Practice Midterm \#1 Exam}}
+\end{center}
+
+\begin{center}
+\Large{MATH 3031}
+\end{center}
+
+\begin{center}
+\large{\textbf{Department of Mathematics \\ Temple University}}
+\end{center}
+
+\vspace{30pt}
+
+\begin{center}
+\large{Februrary 22, 2023}
+\end{center}
+
+\vspace{10pt}
+
+\begin{center}
+\large{\textbf{Name:} \hrulefill}
+\end{center}
+
+\begin{center}
+\large{\textbf{Instructor/Section:} \hrulefill}
+\end{center}
+
+
+
+
+\vspace{30pt}
+
+
+\begin{minipage}[b]{80mm}
+\begin{tabular}{c}
+\noindent This exam consists of 6 questions. \\
+
+\noindent This exam will take \\1hr + 10min to complete. \\
+
+\noindent A 4-function calculator may be used.\\
+
+\noindent Show all relevant work.\\
+\noindent \textbf{No work, no credit.}\\
+
+\noindent \textbf{Good Luck!}\\
+\end{tabular}
+\end{minipage}
+\begin{minipage}[b]{80mm}
+\begin{tabular}{ |c|c|c| }
+	\hline
+	\textbf{Question} & \textbf{Max} & \textbf{Points} \\
+	\hline
+	\hline
+	1& \textbf{8} & \\
+	\hline
+	2& \textbf{4} & \\
+	\hline
+	3& \textbf{8} & \\
+	\hline
+	4& \textbf{4} & \\
+	\hline
+	5& \textbf{4} & \\
+	\hline
+	6& \textbf{8} & \\
+	\hline
+	\hline
+	\textbf{Total} & \textbf{36} & \\
+	\hline
+\end{tabular}
+\end{minipage}
+
+\pagebreak
+
+
+
+
+
+
+
+
+\noindent \fbox{8pts} $~$\textbf{1.} We have an urn with 3 red and 10 blue balls. We draw 5 balls, one by one, without replacement. 
+\begin{itemize}
+\item [(a)] State $\Omega$. Find the probability that the colors we see in order are blue, blue, blue, red, blue.		%normal ordered, n choose k, but for each color
+\end{itemize}
+\textit{Solution. } \\
+\begin{align*}
+P(b,b,b,r,b)&=\frac{\cancel{10}}{13}\cdot \frac{\cancel{9}}{\cancelto{3}{12}}\cdot\frac{\cancelto{2}{8}}{11}\cdot\frac{\boxed{3}}{\cancel{10}}\cdot\frac{7}{\cancel{9}}\tag{since this one's red}\\
+&=\frac{2\cdot\cancel{3}\cdot7}{13\cdot\cancel{3}\cdot11}\\
+&=\frac{2\cdot7}{13\cdot11}=\frac{14}{143}\approx 0.097902.~~~\square
+\end{align*}
+
+\begin{itemize}
+\item [(b)] Find the probability that our sample of balls were all blue.					%normal unordered, n choose k, but #P(b)/#totalP
+\end{itemize}
+\textit{Solution. } \\
+\begin{align*}
+P(b,b,b,b,b)&=\frac{\displaystyle{10\choose5}}{\displaystyle{13\choose5}}=\dfrac{\dfrac{10\cdot9\cdot8\cdot7\cdot6}{5\cdot4\cdot3\cdot2\cdot1}}{\dfrac{13\cdot12\cdot11\cdot10\cdot9}{5\cdot4\cdot3\cdot2\cdot1}}\\
+&=\dfrac{10\cdot9\cdot8\cdot7\cdot6}{\cancel{5\cdot4\cdot3\cdot2\cdot1}}\left(\dfrac{\cancel{5\cdot4\cdot3\cdot2\cdot1}}{13\cdot12\cdot11\cdot10\cdot9}\right)\\
+&=\dfrac{\cancel{10\cdot9}\cdot8\cdot7\cdot6}{13\cdot12\cdot11\cdot\cancel{10\cdot9}}=\dfrac{\cancelto{2}{8}\cdot7\cdot6}{13\cdot\cancelto{3}{4}\cdot11}\\
+&=\dfrac{2\cdot7\cdot\cancelto{2}{6}}{13\cdot\cancelto{1}{3}\cdot11}=2\left(\boxed{\dfrac{14}{143}}\right) \approx 2(0.097902)=0.195804.~~~\square \tag{from part (a)}
+\end{align*}
+
+\begin{itemize}
+\item [(c)] Consider the new sample space $\Omega'$, which is constructed after part (b), i.e. remove 5 blue balls. Suppose we changed our sample size to $k=4$. State $\Omega'$. Find the probability of the event $A=$ \{2 are red and 2 are blue\}.   %normal unordered, n choose k, but #P(b+1)#P(r)/#totalP
+\end{itemize}
+\textit{Solution. } \\
+Let $\Omega'=\Omega\backslash\{b,b,b,b,b\}=\{10b,3r\}\backslash\{5b\}=\{\text{3 red and 5 blue}\}$.
+Now,
+\begin{align*}
+P(\{2r,2b\})=P(A)&=\dfrac{\displaystyle{3\choose2}{5\choose2}}{\displaystyle{8\choose4}}=\dfrac{\dfrac{3\cdot2}{2\cdot1}\left(\dfrac{5\cdot4}{2\cdot1}\right)}{\dfrac{8\cdot7\cdot6\cdot5}{4\cdot3\cdot2\cdot1}}\\
+&=\dfrac{3\cdot2\cdot5\cdot\cancel{4}}{\cancel{4}}\left( \dfrac{\cancel{4}\cdot\cancelto{1}{3}\cdot\cancel{2}\cdot1}{\cancel{8}\cdot7\cdot\cancelto{2}{6}\cdot5} \right)\\
+&=\dfrac{3\cdot\cancel{2\cdot5}}{7\cdot\cancel{2\cdot5}}=\dfrac{3}{7}\approx0.4285714.~~~\square
+\end{align*}
+
+
+\begin{itemize}
+\item [(d)]  Find the probability that the new sample $A$ has at least 2 blue balls. ($\omega'_i\in\Omega'$) 		%sum of probabilities, dependent (without replacement), P(2g)+P(3g)P+P(4g)+P(4g)
+\end{itemize}
+\textit{Solution. } \\
+Let $P(A)=P(kb)$ such that $k\in\mathbb{N}$.
+Now, since at least 2 blue (and cannot exceed 4 since $\#\omega=4$),\\
+then $\implies{}\displaystyle\sum\limits_{k=2}^{4}P(kb)=P(2b)+P(3b)+P(4b)$
+\begin{align*}
+&=\dfrac{\displaystyle{5\choose2}{3\choose2}}{\displaystyle{8\choose3}}+\dfrac{\displaystyle{5\choose3}{3\choose1}}{\displaystyle{8\choose3}}+\dfrac{\displaystyle{5\choose4}\cancel{{3\choose0}}}{\displaystyle{8\choose3}}\\\\
+&=\dfrac{  \dfrac{5\cdot4}{2\cdot1}\left(\dfrac{3\cdot\cancel{2}}{\cancel{2}\cdot1}\right)  +  \dfrac{5\cdot4\cdot3}{3\cdot2\cdot1}(3)   +   \dfrac{5\cdot4\cdot3\cdot2}{4\cdot3\cdot2\cdot1}}        {\dfrac{8\cdot7\cdot6\cdot5}{4\cdot3\cdot2\cdot1}}\\\\
+&=  \left[   \dfrac{5\cdot4\cdot3}{2}+\dfrac{5\cdot4\cdot3\cdot3}{3\cdot2} + \dfrac{5\cdot\cancel{4\cdot3\cdot2}}{\cancel{4\cdot3\cdot2}\cdot1}   \right]   \left(\dfrac{4\cdot3\cdot2\cdot1}{8\cdot7\cdot6\cdot5}\right)\\\\
+&= \dfrac{5\cdot2\cdot3+5\cdot2\cdot3+5}{2\cdot7\cdot5}=\dfrac{65}{70}=\dfrac{13}{14}\approx0.9285714.~~~\square
+\end{align*}
+
+
+\pagebreak
+
+
+
+
+
+
+% Note, there needs to be an enter/space between eqach question, as well as the vspace choice
+\noindent \fbox{4pts} $~$\textbf{2.} If $P(A)=\dfrac{1}{2},~P(B)=\dfrac{1}{3},~\text{and}~P(A\cap B)=\dfrac{1}{4}$,
+\begin{itemize}
+\item [(a)] Find $P(A^C\cap B^C)$		%demorgan complement to union, then complement, then inclusion exclusion 
+\end{itemize}
+\textit{Solution. } \\
+Notice $P(A^C\cap B^C)=P((A\cup B)^C)$ by a de Morgan Law.\\
+Now note using the complement definition, we have\\
+$P((A\cup B)^C)=1-P(A\cup B)$.\\
+And of course, by the inclusion exclusion principle, we get
+\begin{align*}
+1-P(A\cup B)&=1-[P(A)+P(B)-P(A\cap B)]\\
+&=1-\left(\frac{1}{2}+\frac{1}{3}-\frac{1}{4}\right)\\
+&=1-\left(\frac{12+8-6}{24}\right)\\
+&=1-\left(\frac{14}{24}\right)=\frac{12}{12}-\left(\frac{7}{12}\right)=\frac{5}{12}\approx0.41666.~~~\square
+\end{align*}
+
+
+
+
+\begin{itemize}
+\item [(b)] Find $P(A \cup B^C)$			%inclusion exclusion,complements, cancelation property of complement P(a)+P(a^C) (and rearranging it)
+\end{itemize}
+\textit{Solution. } \\
+By the inclusion exclusion principle, we have \\
+$P(A \cup B^C)=P(A)+P(B^C)-P(AB^C)$.\\
+
+\noindent Now we know by definition, $P(A)=P(AB)+P(AB^C)$ (which is a property of complements).\\
+But of course this implies $P(AB^C)=P(A)-P(AB)$.\\
+
+\noindent So now, 
+\begin{align*}
+P(A \cup B^C)&=P(A)+P(B^C)-P(AB^C)\\
+&=P(A)+P(B^C)-P(A)-P(AB)\\
+&=\cancel{P(A)}+(1-P(B))-\cancel{P(A)}-P(AB)	\tag{by $def^n$ of complement}\\
+&=1-P(B)-P(AB)\\
+&=\frac{12}{12}-\frac{4}{12}-\frac{3}{12}=\frac{5}{12}\approx0.41666.~~~\square
+\end{align*}
+\pagebreak
+
+
+
+
+
+\noindent \fbox{8pts} $~$\textbf{3.} An urn contains 3 balls labeled 2, 3, and 4. We draw 2 balls one by one at random with replacement. Let $X$ be the sum of the two numbers of the sample.
+\begin{itemize}
+\item [(a)] Find the possible values of $X$.		%pure observation
+\end{itemize}
+\textit{Solution. } $X=\{5,6,7\}.~~~\square$
+
+\begin{itemize}
+\item [(b)] Find the probability mass function of $X$.			%pure calculation
+\end{itemize}
+\textit{Solution. } $X=\{5,6,7\}.~~~\square$
+
+\begin{itemize}
+\item [(c)] Let $Y=3X-21$. Find the probability mass function of $Y$			%just scale X, same prob
+\end{itemize}
+
+\begin{itemize}
+\item [(d)] Prove that $X$ and $Y$ are dependent for some $(i,j)\in\Omega^2$.
+\end{itemize}
+\pagebreak
+
+
+
+
+
+
+
+\noindent \fbox{4pts} $~$\textbf{4.} We have 3 urns. Urn I has 1 green and 2 red balls, urn II has 2 green and 3 red balls, and urn III has 3 green and 4 red balls. 
+\begin{itemize}
+\item [(a)] We first choose an urn at ransom and then choose a ball randomly from the chosen urn. Find the probability that the ball is red. %conditional prob, useing \sum multiplcation rule
+\item [(b)] Suppose we draw a random ball from urn I and transfer it to urn III. Then we choose a ball randomly from urn III. What is the probability that we draw a green ball from urn III.
+%multiplication rule over the intersection of probs. P(r & 1 cap r &3)=P(R I)*P(R III | R I) + P(R III \cap G I)
+\end{itemize}
+\pagebreak
+
+
+
+
+
+\noindent \fbox{4pts} $~$\textbf{5.} There is a new test for a disease that occurs in about 0.01\% of the population. It detects the disease 99\% of the time. However it has a false positive rate of 10\%. 
+\begin{itemize}
+\item [(a)] What is the probability that the person's result is positive.		%\sum of conditional prob
+\item [(b)] What is the probability that the person actually has the disease if they test positive.		%bayes, use part a 
+\end{itemize}
+\pagebreak
+
+
+
+
+
+\noindent \fbox{8pts} $~$\textbf{6.} Suppose $A,B,C\in\mathcal{F},~s.t.~A,B,C$ are mutually independent. \\
+
+Set $P(A)=.1,~P(B)=.2,~P(C)=.3$. 
+\begin{itemize}
+\item [(a)] $P(A\cap B \cap C^C)$ 		%independence rules
+\item [(b)] $P(A\cup C)$			%inclusion/exclusion principle, then independence on P(AC)
+\item [(c)] $P((A\cup C)\cap B)$
+\item [(d)] Prove that $A\cup C$ is independent of B.
+\end{itemize}
+\pagebreak
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
